@@ -1,6 +1,6 @@
 package camt.se331.temple.service;
 
-import camt.se331.temple.entity.ShoppingCart;
+import camt.se331.temple.entity.QA;
 import camt.se331.temple.entity.User;
 
 import java.util.List;
@@ -13,5 +13,5 @@ public interface UserService {
     public User findByUserName(String username);
     public User findUserByEmail(String username);
     public User login(String email, String password);
-    ShoppingCart addShoppingCart(User user, ShoppingCart shoppingCart);
+    QA addQA(User user, QA QA);
 }

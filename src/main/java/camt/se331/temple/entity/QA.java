@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Dto on 2/7/2015.
  */
 @Entity
-public class ShoppingCart {
+public class QA {
     @Id
     @GeneratedValue
     Long id;
@@ -56,7 +56,7 @@ public class ShoppingCart {
         this.purchaseDate = purchaseDate;
     }
 
-    public ShoppingCart(List<SelectedProduct> selectedProducts) {
+    public QA(List<SelectedProduct> selectedProducts) {
 
         this.selectedProducts = selectedProducts;
     }
@@ -66,7 +66,7 @@ public class ShoppingCart {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ShoppingCart that = (ShoppingCart) o;
+        QA that = (QA) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (selectedProducts != null ? !selectedProducts.equals(that.selectedProducts) : that.selectedProducts != null)
@@ -92,7 +92,7 @@ public class ShoppingCart {
         this.id = id;
     }
 
-    public ShoppingCart() {
+    public QA() {
 
 
     }

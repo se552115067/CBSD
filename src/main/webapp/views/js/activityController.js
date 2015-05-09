@@ -1,6 +1,6 @@
 'use strict';
 
-var activityMainController = angular.module('activityMainController', ['activityServices','shoppingCartServices']);
+var activityMainController = angular.module('activityMainController', ['activityServices','qaServices']);
 activityMainController.controller('addActivityController', ['$scope', '$http', '$location', '$rootScope','activityService',
     function ($scope, $http, $location, $rootScope,activityService) {
         $scope.activity = {};
@@ -61,10 +61,10 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
 
         $scope.addToCart = function(activity){
             activity.images = null;
-            cartManagement.addToCart(activity,function(shoppingCart){
+            cartManagement.addToCart(activity,function(qa){
                             //success event
-                            $rootScope.shoppingCart = shoppingCart;
-                $location.path("shoppingCart")
+                            $rootScope.qa = qa;
+                $location.path("qa")
 
             },function(event){
                                 // fail event

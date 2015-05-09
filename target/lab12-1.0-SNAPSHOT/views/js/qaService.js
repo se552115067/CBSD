@@ -1,7 +1,7 @@
 'use strict'
-var shoppingCartServices = angular.module('shoppingCartServices',['ngResource']);
-shoppingCartServices.factory('shoppingCartService',function($resource){
-    return $resource('/shoppingcart/:id', { id: '@_id' }, {
+var qaServices = angular.module('qaServices',['ngResource']);
+qaServices.factory('qaService',function($resource){
+    return $resource('/qa/:id', { id: '@_id' }, {
         update: {
             method: 'PUT' // this method issues a PUT request
         }});
@@ -9,8 +9,8 @@ shoppingCartServices.factory('shoppingCartService',function($resource){
 })
 
 
-shoppingCartServices.factory('cartManagement',function($resource) {
-    return $resource('/shoppingcart/:action', {}, {
+qaServices.factory('cartManagement',function($resource) {
+    return $resource('/qa/:action', {}, {
         addToCart: {
             method: 'POST',
             params: {'action': 'addToCart'}

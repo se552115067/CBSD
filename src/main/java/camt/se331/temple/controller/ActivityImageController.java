@@ -21,16 +21,16 @@ import java.util.Iterator;
  * Created by Dto on 4/27/2015.
  */
 @Controller
-@RequestMapping("/productImage")
-public class ProductImageController {
+@RequestMapping("/activityImage")
+public class ActivityImageController {
     @Autowired
     ActivityService activityService;
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Activity addImage(HttpServletRequest request,
-                            HttpServletResponse response,@RequestParam("productid")Long productId){
+                            HttpServletResponse response,@RequestParam("activityid")Long activityId){
         MultipartHttpServletRequest mRequest;
-        Activity activity = activityService.getActivity(productId);
+        Activity activity = activityService.getActivity(activityId);
         try{
             mRequest = (MultipartHttpServletRequest)request;
             Iterator<String> itr= mRequest.getFileNames();

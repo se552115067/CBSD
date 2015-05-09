@@ -1,15 +1,15 @@
 'use strict';
 
-var shoppingCartControllers = angular.module('shoppingCartControllers', ['shoppingCartServices']);
+var qaControllers = angular.module('qaControllers', ['qaServices']);
 
-shoppingCartControllers.controller('showShoppingCartController',
+qaControllers.controller('showQAController',
     ['$scope', 'cartManagement', '$location', '$rootScope','$routeParams',
         function ($scope, cartManagement, $location, $rootScope,$rootParams) {
-            if ($rootScope.shoppingCart != null){
-            $scope.cart = $rootScope.shoppingCart;
+            if ($rootScope.qa != null){
+            $scope.cart = $rootScope.qa;
         }else {
             var id = $rootParams.id;
-            shoppingCartService.get({id: id}, function (data) {
+            qaService.get({id: id}, function (data) {
                 $scope.cart = data;
             })
         }

@@ -31,8 +31,8 @@
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
     <script src="js/languageServices.js"></script>
     <script src="js/languageControllers.js"></script>
-    <script src="js/ShoppingCartController.js"></script>
-    <script src="js/shoppingCartService.js"></script>
+    <script src="js/qaController.js"></script>
+    <script src="js/qaService.js"></script>
     <script src="js/securityController.js"></script>
 </head>
 <body>

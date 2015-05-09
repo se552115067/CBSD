@@ -7,7 +7,7 @@ var labApp = angular.module('labApp', [
     'languageControllers',
     'languageServices',
     'pascalprecht.translate',
-    'shoppingCartControllers',
+    'qaControllers',
     'flow',
     'securityControllers'
 ])
@@ -26,9 +26,9 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/activityList.html',
           controller: 'listActivityController'
       }).
-      when('/shoppingCart/',{
-          templateUrl: 'template/shoppingCart.html',
-          controller: 'showShoppingCartController'
+      when('/qa/',{
+          templateUrl: 'template/qa.html',
+          controller: 'showQAController'
       }).
        otherwise({redirectTo: '/listActivity'});
 }]);

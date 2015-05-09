@@ -1,8 +1,8 @@
 package camt.se331.temple.service;
 
-import camt.se331.temple.entity.ShoppingCart;
+import camt.se331.temple.entity.QA;
 import camt.se331.temple.entity.User;
-import camt.se331.temple.repository.ShoppingCartRepository;
+import camt.se331.temple.repository.QARepository;
 import camt.se331.temple.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Autowired
-    ShoppingCartRepository shoppingCartRepository;
+    QARepository QARepository;
 
     @Override
     public List<User> findAll() {
@@ -44,11 +44,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public ShoppingCart addShoppingCart(User user, ShoppingCart shoppingCart) {
+    public QA addQA(User user, QA QA) {
         User currentUser = userRepository.findOne(user.getId());
-        currentUser.getShoppingCarts().add(shoppingCart);
-        shoppingCart.setUser(currentUser);
-        shoppingCartRepository.save(shoppingCart);
-        return shoppingCart;
+        currentUser.getQAs().add(QA);
+        QA.setUser(currentUser);
+        QARepository.save(QA);
+        return QA;
     }
 }

@@ -28,18 +28,18 @@ public class User {
     @Cascade(CascadeType.ALL)
     private Set<Role> roles = new HashSet<>();
 
-    public Set<ShoppingCart> getShoppingCarts() {
-        return shoppingCarts;
+    public Set<QA> getQAs() {
+        return QAs;
     }
 
-    public void setShoppingCarts(Set<ShoppingCart> shoppingCarts) {
-        this.shoppingCarts = shoppingCarts;
+    public void setQAs(Set<QA> QAs) {
+        this.QAs = QAs;
     }
 
     @OneToMany(mappedBy = "user")
     @Cascade(CascadeType.ALL)
     @JsonManagedReference
-    private Set<ShoppingCart> shoppingCarts;
+    private Set<QA> QAs;
 
     public User() {
     }

@@ -3,7 +3,7 @@ package camt.se331.temple.config;
 import camt.se331.temple.entity.*;
 import camt.se331.temple.repository.ActivityRepository;
 import camt.se331.temple.repository.RoleRepository;
-import camt.se331.temple.repository.ShoppingCartRepository;
+import camt.se331.temple.repository.QARepository;
 import camt.se331.temple.repository.UserRepository;
 import camt.se331.temple.service.ImageUtil;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,7 +22,7 @@ public class DatabaseInitializationBean implements InitializingBean {
     @Autowired
     ActivityRepository activityRepository;
     @Autowired
-    ShoppingCartRepository shoppingCartRepository;
+    QARepository qaRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -47,7 +47,7 @@ public class DatabaseInitializationBean implements InitializingBean {
         activityRepository.save(Arrays.asList(initActivity));
         activityRepository.save(new Activity(1l,"Kindle","the good book reader","en"));
 
-        ShoppingCart shoppingCart = new ShoppingCart();
+        QA qa = new QA();
         List<SelectedProduct> selectedProducts = new ArrayList<>();
         SelectedProduct[] initSelectedProduct = {
                 new SelectedProduct(initActivity[2], 5),
@@ -56,10 +56,10 @@ public class DatabaseInitializationBean implements InitializingBean {
         };
         selectedProducts.addAll(Arrays.asList(initSelectedProduct));
         Calendar calendar = new GregorianCalendar(2015,4,7);
-        shoppingCart.setSelectedProducts(selectedProducts);
-        shoppingCart.setPurchaseDate(calendar.getTime());
-        shoppingCart.setId(1L);
-        shoppingCartRepository.save(shoppingCart);
+        qa.setSelectedProducts(selectedProducts);
+        qa.setPurchaseDate(calendar.getTime());
+        qa.setId(1L);
+        qaRepository.save(qa);
 
         // add user
         Role adminRole = new Role("admin");

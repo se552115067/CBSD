@@ -24,7 +24,7 @@ public class SecurityUser extends User implements UserDetails {
             this.setRoles(user.getRoles());
             this.setPassword(user.getPassword());
             this.setUsername(user.getUsername());
-            this.setShoppingCarts(user.getShoppingCarts());
+            this.setQAs(user.getQAs());
         }
     }
     @Override
