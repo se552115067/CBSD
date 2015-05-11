@@ -1,0 +1,13 @@
+package wat.service;
+
+import wat.entity.User;
+
+import java.util.List;
+
+/**
+ * Created by P-OniSawa on 11/5/2558.
+ */
+public interface UserService {
+    public List<User> findAll();
+    public User findByUserName(String username);
+}
