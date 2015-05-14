@@ -33,6 +33,10 @@
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
     <script src="js/homeController.js"></script>
     <script src="js/securityController.js"></script>
+    <script src="js/registerController.js"></script>
+    <script src="js/registerService.js"></script>
+
+
 </head>
 <body style="background-color: #000000;">
 <div class="whole-page">

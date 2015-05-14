@@ -5,7 +5,8 @@ var watApp = angular.module('watApp', [
     'ngRoute',
     'ngAnimate',
     'homeControllers',
-    'securityControllers'
+    'securityControllers',
+    'registerControllers'
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -13,6 +14,10 @@ watApp.config(['$routeProvider',
             when('/home',{
                 templateUrl: 'template/home.html',
                 controller: 'homeController'
+            }).
+            when('/register',{
+                templateUrl: 'template/register.html',
+                controller: 'addUserController'
             }).
             otherwise({redirectTo: '/home'});
     }]);

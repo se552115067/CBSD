@@ -8,6 +8,13 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import wat.entity.Role;
+import wat.entity.User;
+import wat.repository.RoleRepository;
+import wat.repository.UserRepository;
+
 /**
  * Created by P-OniSawa on 11/5/2558.
  */
@@ -29,6 +36,15 @@ public class User {
 
         public User() {
         }
+
+    public User(String username, String name, String email, String password) {
+        this.username = username;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        roles.add(new Role("user"));
+        setRoles(roles);
+    }
 
     public User(String username, String name, String email, String password, Set<Role> roles) {
         this.username = username;
