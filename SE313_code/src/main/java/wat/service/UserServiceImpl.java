@@ -1,6 +1,5 @@
 package wat.service;
 
-import wat.dao.UserDao;
 import wat.entity.User;
 import wat.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,21 +16,15 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    UserDao userDao;
 
-    @Override
-    public List<User> findAll() {
+
+                 @Override
+                 public List<User> findAll() {
                      return userRepository.findAll();
                  }
 
-    @Override
-    public User findByUserName(String username) {
+        @Override
+        public User findByUserName(String username) {
             return userRepository.findByUsername(username);
         }
-
-    @Override
-    public User addUser(User user) {
-        return userDao.addUser(user);
-    }
 }
