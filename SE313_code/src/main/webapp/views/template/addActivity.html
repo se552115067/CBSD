@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
                 <label for="activityvenue">Venue</label>
-                <input ng-model="activity.venue" name="activitytime" class="form-control" id="activityvenue"
+                <input ng-model="activity.venue" name="activityvenue" class="form-control" id="activityvenue"
                        placeholder="Venue" type="Venue" required/>
 
 
@@ -66,6 +66,14 @@
                     Venue is Required!
                 </div>
             </div>
+
+
+                <div ng-repeat="image in activity.images" class="textcenter">
+
+                <img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail">
+                    <td class="text-center"><a ng-href="#/edit/{{activity.id}}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="deleteImg(activity.id,image.id)"></span></a></td>
+                </div>
+            deleteImg();
 
 
 

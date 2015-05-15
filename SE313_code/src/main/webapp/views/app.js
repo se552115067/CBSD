@@ -24,6 +24,9 @@ watApp.config(['$routeProvider',
             }).when('/add',{
                 templateUrl: 'template/addActivity.html',
                 controller: 'addActivityController'
+            }).when('/edit/:id',{
+                templateUrl: 'template/addActivity.html',
+                controller: 'editActivityController'
             }).
             otherwise({redirectTo: '/home'});
     }]);
