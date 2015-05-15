@@ -11,6 +11,7 @@ package wat.entity;
 
         import javax.persistence.*;
         import javax.persistence.Entity;
+
         import java.sql.Time;
         import java.util.Date;
         import java.util.HashSet;
@@ -28,10 +29,36 @@ public class Activity implements Comparable {
     String description;
     String lang;
     Date date;
-    Time time;
+
+    String venue;
     @OneToMany(fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     Set<Image> images = new HashSet<>();
+    public Activity(String name, String description, Date date,String venue) {
+        this.name = name;
+        this.description = description;
+        
+        this.date = date;
+        this.venue=venue;
+    }
+    public Activity(String name, String description, String lang, Date date, Set<Image> images) {
+        this.name = name;
+        this.description = description;
+        this.lang = lang;
+        this.date = date;
+this.venue="asdsad";
+        this.images = images;
+    }
+
+    public Activity(String name, String description, String lang, Date date, String venue, Set<Image> images) {
+        this.name = name;
+        this.description = description;
+        this.lang = lang;
+        this.date = date;
+
+        this.venue = venue;
+        this.images = images;
+    }
 
     public Activity(Long id,String aname, String adescription, String lang, Set<Image> images) {
         this.Id=id;
@@ -50,6 +77,23 @@ public class Activity implements Comparable {
     }
 
     public Activity() {
+        this.venue="assssdsad";
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getVenue() {
+        return venue;
+    }
+
+    public void setVenue(String venue) {
+        this.venue = venue;
     }
 
     public String getName() {

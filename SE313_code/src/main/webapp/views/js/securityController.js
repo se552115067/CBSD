@@ -2,7 +2,7 @@
 var securityController = angular.module('securityControllers',['securityServices','ngCookies']);
 securityController.controller('loginController',['$scope','$rootScope','$location','$cookieStore','UserService',
     function($scope, $rootScope, $location, $cookieStore, UserService){
-        $scope.rememberMe = true;
+        $scope.rememberMe = false;
         $scope.login = function(){
             UserService.authenticate($.param({username:$scope.username,password:$scope.password}),
                             //success connection
