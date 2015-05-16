@@ -6,8 +6,21 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-    'registerControllers'
+    'activityMainControllers',
+    'registerControllers',
+    'languageControllers',
+    'languageServices',
+    'pascalprecht.translate'
 ])
+
+watApp.config(function($translateProvider){
+    $translateProvider.useUrlLoader('/messageBundle');
+    $translateProvider.useStorage('UrlLanguageStorage');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+
+})
+
 watApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
@@ -15,9 +28,18 @@ watApp.config(['$routeProvider',
                 templateUrl: 'template/home.html',
                 controller: 'homeController'
             }).
-            when('/register',{
-                templateUrl: 'template/register.html',
-                controller: 'addUserController'
+            when('/List',{
+                templateUrl: 'template/acitivitylist.html',
+                controller: 'listActivityController'
+            }).when('/activity/:id',{
+                templateUrl: 'template/activity.html',
+                controller: 'editActivityController'
+            }).when('/add',{
+                templateUrl: 'template/addActivity.html',
+                controller: 'addActivityController'
+            }).when('/edit/:id',{
+                templateUrl: 'template/addActivity.html',
+                controller: 'editActivityController'
             }).
             otherwise({redirectTo: '/home'});
     }]);

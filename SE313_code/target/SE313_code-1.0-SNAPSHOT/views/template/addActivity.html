@@ -1,0 +1,84 @@
+<div class="row-fluid">
+    <div class="row" ng-show="addPerson">
+        <h1>Add new Activity</h1>
+    </div>
+    <div class="row" ng-show="editPerson">
+        <h1>Edit Activity</h1>
+    </div>
+    <div class="col-md-4">
+        <form name="editform" novalidate flow-init>
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="activityname">name :</label>
+                <input ng-model="activity.name" class="form-control" id="activityname" name="activityname" placeholder="name" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.activityname.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Activity Name is Required!!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="activitydescription">Description :</label>
+                <input ng-model="activity.description" class="form-control" id="activitydescription"
+                       placeholder="description" name="activitydescription" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.activitydescription.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Description is Required!
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="activitydate">Date :</label>
+                <input ng-model="activity.date" name="activitydate" class="form-control" id="activitydate"
+                       placeholder="Date" type="date" required/>
+                <div class="alert alert-danger" role="alert" ng-show="editform.activitydate.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Date is Required!
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <label for="activitytime">Time :</label>
+                <input ng-model="activity.time" name="activitytime" class="form-control" id="activitytime"
+                       placeholder="Time" type="Time" required/>
+
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.activitytime.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Time is Required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="activityvenue">Venue</label>
+                <input ng-model="activity.venue" name="activityvenue" class="form-control" id="activityvenue"
+                       placeholder="Venue" type="Venue" required/>
+
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.activityvenue.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Venue is Required!
+                </div>
+            </div>
+
+
+                <div ng-repeat="image in activity.images" class="textcenter">
+
+                <img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail">
+                    <td class="text-center"><a ng-href="#/edit/{{activity.id}}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="deleteImg(activity.id,image.id)"></span></a></td>
+                </div>
+            deleteImg();
+
+
+
+            <button type="submit" class="btn btn-default" ng-click="addProduct()" ng-show="add">Add</button>
+            <button type="submit" class="btn btn-default" ng-click="editProduct()" ng-show="edit">Edit</button>
+        </form>
+    </div>
+</div>
