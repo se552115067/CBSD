@@ -3,20 +3,17 @@ package wat.controller;
 import org.eclipse.core.internal.runtime.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import wat.entity.Activity;
 import wat.entity.Image;
 import wat.service.ActivityService;
+import wat.service.ImageService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Calendar;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by Punjasin on 5/13/2015.
@@ -26,6 +23,8 @@ import java.util.Iterator;
 public class ActivityImageController {
     @Autowired
     ActivityService activityService;
+
+
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Activity addImage(HttpServletRequest request,
@@ -51,4 +50,5 @@ public class ActivityImageController {
 
         return activity;
     }
+
 }

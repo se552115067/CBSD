@@ -29,24 +29,26 @@ public class Activity implements Comparable {
     String description;
     String lang;
     Date date;
+    Time time;
 
     String venue;
     @OneToMany(fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     Set<Image> images = new HashSet<>();
-    public Activity(String name, String description, Date date,String venue) {
+    public Activity(String name, String description, Date date,String venue,Time time) {
         this.name = name;
         this.description = description;
-        
         this.date = date;
         this.venue=venue;
+        this.time=time;
+
     }
     public Activity(String name, String description, String lang, Date date, Set<Image> images) {
         this.name = name;
         this.description = description;
         this.lang = lang;
         this.date = date;
-this.venue="asdsad";
+        this.venue="";
         this.images = images;
     }
 
@@ -77,7 +79,7 @@ this.venue="asdsad";
     }
 
     public Activity() {
-        this.venue="assssdsad";
+
     }
 
     public Date getDate() {

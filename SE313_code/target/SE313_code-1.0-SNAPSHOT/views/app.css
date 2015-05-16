@@ -41,22 +41,13 @@ a:active {
     display: inline;
 }
 
-.menu1 {
-    color: white;
-    font-size: 150%;
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
-}
-
-
 .home{
     font-size: 210%; !important;
 }
 
 
-.error { float: none; color: red; padding-left: 11.5em; vertical-align: top; }
+
+.error { display: block; float: none; color: red; padding-left: 11.5em; vertical-align: top; }
 
 .thumbnail {
     max-width: 200px; max-height: 150px; line-height: 20px; margin-bottom: 5px;
@@ -67,7 +58,8 @@ a:active {
     height: 400px;
     overflow: hidden;
     position: relative;
-    background: #000000;
+    background: #e6e6e6;
+    border: 20px solid #FFF;
     margin-top: 20px;
 }
 
@@ -102,7 +94,6 @@ a:active {
     right: 20px;
     background-image: url(pic/n1.png);
     transition: 0.2s linear all;
-    padding: 0 0 0 10cm;
 }
 
 .arrow.prev:hover {
