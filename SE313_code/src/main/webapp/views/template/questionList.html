@@ -1,0 +1,50 @@
+
+<div class="alert alert-success alert-dismissible" role="alert" ng-show="add">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> Success adding a new Activity
+</div>
+<div class="alert alert-success alert-dismissible" role="alert" ng-show="edit">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> Success edit the product
+</div>
+<div class="alert alert-success alert-dismissible" role="alert" ng-show="delete">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> Success delete the Activity
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Question</div>
+
+
+    <!-- Table -->
+    <table class="table table-hover">
+
+            <tr ng-repeat="question in questions">
+
+            <td ng-show="!{{question.new}}"><a href="#/question/{{question.id}}">{{question.name}}</a></td>
+                <td ng-show="!{{question.new}}">{{question.answer}}</td>
+        </tr>
+
+    </table>
+    <div >
+        <form name="askform">
+
+            <div class="form-group">
+                <label for="Question">Question</label>
+                <textarea cols="40" rows="3" ng-model="question.name" name="Question" class="form-control" id="Question"
+                       placeholder="ask question here" type="Text" required> </textarea>
+
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.Question.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Question is Required!
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="addQuestion()" >Ask</button>
+        </form></div>
+</div>

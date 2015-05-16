@@ -8,6 +8,7 @@ activityService.factory('activityService',function($resource){
         }});
 
 })
+<<<<<<< HEAD
 activityService.factory('deleteImgService',function($resource){
     return $resource('/imgcontrol/:id/:imgid', { id: '@_id',imgid: '@_imgid' }, {
         update: {
@@ -15,6 +16,8 @@ activityService.factory('deleteImgService',function($resource){
         }});
 
 })
+=======
+>>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
 activityService.factory('queryActivityService',function($resource){
     return $resource('/getActivity/?name=:name',
         {query:{method:'GET',params:{name:''},isArray:true}

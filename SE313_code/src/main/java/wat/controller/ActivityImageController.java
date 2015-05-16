@@ -28,7 +28,7 @@ public class ActivityImageController {
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Activity addImage(HttpServletRequest request,
-                            HttpServletResponse response,@RequestParam("activityid")Long activityId){
+                            HttpServletResponse response,@RequestParam("activityId")Long activityId){
         MultipartHttpServletRequest mRequest;
         Activity activity = activityService.getActivity(activityId);
         try{
@@ -42,6 +42,7 @@ public class ActivityImageController {
                 image.setContent(multipartFile.getBytes());;
                 image.setCreated(Calendar.getInstance().getTime());
                 activityService.addImage(activity, image);
+
             }
         }catch (Exception e){
             e.printStackTrace();

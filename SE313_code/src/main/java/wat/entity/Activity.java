@@ -35,14 +35,36 @@ public class Activity implements Comparable {
     @OneToMany(fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     Set<Image> images = new HashSet<>();
-    public Activity(String name, String description, Date date,String venue,Time time) {
+    public Activity(String name, String description, Date date,String venue,Time time,Image image) {
         this.name = name;
         this.description = description;
         this.date = date;
         this.venue=venue;
         this.time=time;
+        images.add(image);
 
     }
+
+    public Activity(String name, String description, String lang, Date date, Time time, String venue, Image images) {
+        this.name = name;
+        this.description = description;
+        this.lang = null;
+        this.date = date;
+        this.time = time;
+        this.venue = venue;
+        this.images.add(images);
+    }
+
+    public Activity(String name, String description, Date date, Time time, String venue, Set<Image> images) {
+        this.name = name;
+        this.description = description;
+        this.lang = null;
+        this.date = date;
+        this.time = time;
+        this.venue = venue;
+        this.images = images;
+    }
+
     public Activity(String name, String description, String lang, Date date, Set<Image> images) {
         this.name = name;
         this.description = description;

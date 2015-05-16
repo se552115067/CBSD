@@ -19,13 +19,12 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/ng-flow/dist/ng-flow-standalone.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
     <script src="app.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <%--<script src="js/jquery.js"></script>--%>
+    <%--<script src="js/bootstrap.js"></script>--%>
 
 
 
@@ -37,6 +36,11 @@
     <script src="js/ActivityController.js"></script>
     <script src="js/activityServices.js"></script>
     <script src="js/securityController.js"></script>
+
+
+    <script src="js/questionService.js"></script>
+    <script src="js/QuestionController.js"></script>
+
 </head>
 <body style="background-color: #000000;">
 <div class="whole-page">

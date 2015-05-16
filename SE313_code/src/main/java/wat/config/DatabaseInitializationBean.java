@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import wat.entity.Activity;
+import wat.entity.QuestionAnswer;
 import wat.entity.Role;
 import wat.entity.User;
 import wat.repository.ActivityRepository;
+import wat.repository.QuestionRepository;
 import wat.repository.RoleRepository;
 import wat.repository.UserRepository;
 import wat.service.ImageUtil;
@@ -30,10 +32,13 @@ public class DatabaseInitializationBean implements InitializingBean {
     @Autowired
     ActivityRepository activityRepository;
 
+    @Autowired
+    QuestionRepository questionRepository;
 
     @Override
     public void afterPropertiesSet() throws Exception {
-
+        QuestionAnswer[] initQuestion ={new QuestionAnswer(1l,"Where are we")};
+        questionRepository.save(Arrays.asList(initQuestion));
         //add activity
         Activity[] initActivity =  {
                 new Activity(1l,"Kindle","the good book reader","EN", ImageUtil.getImage("pic/1.JPG"))

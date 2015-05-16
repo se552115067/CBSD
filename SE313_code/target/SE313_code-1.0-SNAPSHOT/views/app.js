@@ -6,7 +6,16 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
+<<<<<<< HEAD
     'activityMainControllers'
+=======
+    'registerControllers',
+    'historyControllers',
+    'activityMainControllers',
+    'languageControllers',
+    'languageServices',
+    'pascalprecht.translate'
+>>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -27,6 +36,22 @@ watApp.config(['$routeProvider',
             }).when('/edit/:id',{
                 templateUrl: 'template/addActivity.html',
                 controller: 'editActivityController'
+            }).
+            when('/map',{
+                templateUrl: 'template/map.html',
+                controller: ''
+            }).
+            when('/history',{
+                templateUrl: 'template/history.html',
+                controller: 'showHistoryController'
+            }).
+            when('/history/:id',{
+                templateUrl: 'template/editHistory.html',
+                controller: 'editHistoryController'
+            }).
+            when('/contact',{
+                templateUrl: 'template/contact.html',
+                controller: ''
             }).
             otherwise({redirectTo: '/home'});
     }]);
@@ -116,3 +141,10 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     }
     $rootScope.initialized = true;
 });
+
+watApp.config(function($translateProvider){
+    $translateProvider.useUrlLoader('/messageBundle');
+    $translateProvider.useStorage('UrlLanguageStorage');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+})

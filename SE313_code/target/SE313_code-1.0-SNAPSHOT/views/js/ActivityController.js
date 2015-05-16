@@ -57,15 +57,21 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
 
 
     }]);
+<<<<<<< HEAD
 
 activityMainController.controller('editActivityController', ['$scope','deleteImgService', '$http', '$routeParams', '$location', '$rootScope','$route','activityService',
     function ($scope,deleteImgService, $http, $routeParams, $location, $rootScope,$route,activityService) {
+=======
+activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
+    function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
+>>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
         $scope.add = false;
         $scope.edit = true;
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;
         });
+<<<<<<< HEAD
         $scope.deleteImg = function (id,imgid) {
             var answer = confirm("Do you want to delete the Image?");
             if (answer) {
@@ -76,6 +82,10 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
             }
         }
         $scope.editActivity = function   (flowFiles) {
+=======
+
+        $scope.editActivity = function (flowFiles) {
+>>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
                 var Activityid = data.id;
@@ -84,7 +94,11 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
                 flowFiles.opts.query ={Activityid:Activityid};
                 flowFiles.upload();
                 $rootScope.editSuccess = true;
+<<<<<<< HEAD
                 $location.path("List");
+=======
+                $location.path("ListActivity");
+>>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
                 $scope.$apply();
             });
         }

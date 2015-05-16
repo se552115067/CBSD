@@ -2,19 +2,20 @@
 var activityMainController = angular.module('activityMainControllers', ['activityServices']);
 activityMainController.controller('addActivityController', ['$scope', '$http', '$location', '$rootScope','activityService',
     function ($scope, $http, $location, $rootScope,activityService) {
-        $scope.product = {};
+        $scope.activity = {};
         $scope.add = true;
         $scope.edit = false;
-        $scope.addProduct = function () {
+        $scope.addActivity = function (flowFiles) {
             activityService.save($scope.activity,function(data){
-                // after adding the object, add a new picture
-                // get the product id which the image will be addded
-                var Activityid = data.id;
+                 //after adding the object, add a new picture
+                console.log(flowFiles);
+                 //get the product id which the image will be add
+                var activityid = data.id;
                 // set location
-                //flowFiles.opts.target = '/activityImage/add';
-                //flowFiles.opts.testChunks = false;
-                //flowFiles.opts.query ={Activityid:Activityid};
-                //flowFiles.upload();
+                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.testChunks = false;
+                flowFiles.opts.query ={activityId:activityid};
+                flowFiles.upload();
 
                 $rootScope.addSuccess = true;
                 $location.path("List");
@@ -75,7 +76,7 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
                 })
             }
         }
-        $scope.editActivity = function   (flowFiles) {
+        $scope.editActivity = function (flowFiles) {
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
                 var Activityid = data.id;

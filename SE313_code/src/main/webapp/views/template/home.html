@@ -1,43 +1,43 @@
-<!--<div class="container slider">-->
-    <!--<img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"-->
-         <!--ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"-->
-         <!--ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">-->
+<div class="container slider">
+    <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+         ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+         ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
 
-    <!--<a class="arrow prev" href="#" ng-click="nextSlide()"></a>-->
-    <!--<a class="arrow next" href="#" ng-click="prevSlide()"></a>-->
-    <!--<nav class="nav">-->
-        <!--<div class="wrapper">-->
-            <!--<ul class="dots">-->
-                <!--<li class="dot" ng-repeat="slide in slides">-->
-                    <!--<a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"-->
-                       <!--ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</nav>-->
-<!--</div>-->
-
-
-<header>
-    <!-- Indicators -->
-    <ol class="carousel-indicators" >
-        <li ng-repeat="slide in slides" data-target="#myCarousel" data-slide-to="{{$index+1}}" ng-class="{active : $first}"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div ng-repeat="slide in slides" class="carousel-inner" >
-        <div  class="item" ng-class="{active : $first}">
-            <div class="fill" ng-style="background-image:url('{{slide.image}}');"></div>
-
+    <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in slides">
+                    <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
+                       ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+            </ul>
         </div>
+    </nav>
+</div>
 
-    </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
-</header>
+<!--<header>-->
+    <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+    <!--<ol class="carousel-indicators" >-->
+        <!--<li ng-repeat="slide in slides" data-target="#myCarousel" data-slide-to="{{$index+1}}" ng-class="{active : $first}"></li>-->
+    <!--</ol>-->
+
+    <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-repeat="slide in slides" class="carousel-inner" >&ndash;&gt;-->
+        <!--&lt;!&ndash;<div  class="item" ng-class="{active : $first}">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="fill" ng-style="background-image:url('{{slide.image}}');"></div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash; Controls &ndash;&gt;-->
+    <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
+        <!--<span class="icon-prev"></span>-->
+    <!--</a>-->
+    <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">-->
+        <!--<span class="icon-next"></span>-->
+    <!--</a>-->
+<!--</header>-->
 

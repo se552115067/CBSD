@@ -8,6 +8,7 @@ activityService.factory('activityService',function($resource){
         }});
 
 })
+
 activityService.factory('deleteImgService',function($resource){
     return $resource('/imgcontrol/:id/:imgid', { id: '@_id',imgid: '@_imgid' }, {
         update: {

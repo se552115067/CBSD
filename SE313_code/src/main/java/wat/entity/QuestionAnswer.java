@@ -14,12 +14,17 @@ import java.util.Set;
 @Entity
 public class QuestionAnswer {
     @Id
-            @GeneratedValue
+    @GeneratedValue
             Long id;
 String name;
     boolean New;
     String answer;
+    public QuestionAnswer(String name) {
 
+        this.name = name;
+        this.New = true;
+
+    }
     public QuestionAnswer(Long id,String name) {
         this.id=id;
         this.name = name;
@@ -56,6 +61,7 @@ String name;
     }
 
     public QuestionAnswer() {
+        this.New=true;
     }
 
     public Long getId() {

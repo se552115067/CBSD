@@ -6,7 +6,9 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-    'activityMainControllers'
+    'flow',
+    'activityMainControllers',
+    'questionMainControllers'
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -27,13 +29,19 @@ watApp.config(['$routeProvider',
             }).when('/edit/:id',{
                 templateUrl: 'template/addActivity.html',
                 controller: 'editActivityController'
-            }).
+            }).when('/question',{
+                templateUrl: 'template/questionList.html',
+                controller: 'listQuestionController'
+            }).when('/question/:id',{
+            templateUrl: 'template/answerQuestion.html',
+            controller: 'editQuestionController'
+        }).
             otherwise({redirectTo: '/home'});
     }]);
 
 
 watApp.config(['$locationProvider', '$httpProvider', function($locationProvider, $httpProvider){
-    /* Register error provider that shows message on failed requests or redirects to login page on
+    /* Register error provider t    hat shows message on failed requests or redirects to login page on
      * unauthenticated requests */
     $httpProvider.interceptors.push(function($q,$rootScope,$location){
         return {
@@ -116,3 +124,18 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     }
     $rootScope.initialized = true;
 });
+watApp.config(['flowFactoryProvider', function (flowFactoryProvider) {
+    flowFactoryProvider.defaults = {
+        target: '',
+        permanentErrors: [ 500, 501],
+        maxChunkRetries: 1,
+        chunkRetryInterval: 5000,
+        simultaneousUploads: 4,
+        singleFile: false
+    };
+    flowFactoryProvider.on('catchAll', function (event) {
+        console.log('catchAll', arguments);
+    });
+    // Can be used with different implementations of Flow.js
+    // flowFactoryProvider.factory = fustyFlowFactory;
+}]);
