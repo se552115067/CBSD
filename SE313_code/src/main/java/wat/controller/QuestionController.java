@@ -39,6 +39,7 @@ public class QuestionController {
 
     @RequestMapping(value = "question/{id}",method = RequestMethod.PUT)
     public  QuestionAnswer edit(@PathVariable("id") Long id,@RequestBody QuestionAnswer question, BindingResult bindingResult){
+        question.setNew(false);
         return questionService.updateQuestionAnswer(question);
     }
 

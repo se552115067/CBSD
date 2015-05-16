@@ -64,11 +64,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-<<<<<<< HEAD
-        <element id="file-copy" path="$PROJECT_DIR$/target/SE313_code-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
-=======
         <element id="file-copy" path="E:\SE\Compo\SE313_code\target/MANIFEST.MF" />
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
       </element>
       <element id="javaee-facet-resources" facet="SE313_code/web/Web" />
     </root>

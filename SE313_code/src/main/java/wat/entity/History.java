@@ -38,9 +38,9 @@ public class History {
         this.description = description;
     }
 
-    public History(String description, String lang, Set<Image> images) {
+    public History(String description, Set<Image> images) {
         this.description = description;
-        this.lang = lang;
+        this.lang = "en";
         this.images = images;
     }
 

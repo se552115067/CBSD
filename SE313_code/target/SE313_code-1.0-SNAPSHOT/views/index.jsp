@@ -24,8 +24,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
     <script src="app.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
 
 
 
@@ -34,11 +32,7 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
     <script src="js/homeController.js"></script>
-    <script src="js/ActivityController.js"></script>
-    <script src="js/activityServices.js"></script>
     <script src="js/securityController.js"></script>
-<<<<<<< HEAD
-=======
     <script src="js/registerController.js"></script>
     <script src="js/historyService.js"></script>
     <script src="js/historyController.js"></script>
@@ -47,10 +41,12 @@
     <script src="js/ActivityController.js"></script>
     <script src="js/languageServices.js"></script>
     <script src="js/languageControllers.js"></script>
+    <script src="js/questionService.js"></script>
+    <script src="js/QuestionController.js"></script>
 
 
 
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
+
 </head>
 <body style="background-color: #000000;">
 <div ng-controller="languageController">

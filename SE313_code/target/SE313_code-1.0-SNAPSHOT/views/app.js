@@ -6,16 +6,13 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-<<<<<<< HEAD
-    'activityMainControllers'
-=======
     'registerControllers',
     'historyControllers',
     'activityMainControllers',
+    'questionMainControllers',
     'languageControllers',
     'languageServices',
     'pascalprecht.translate'
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -24,18 +21,9 @@ watApp.config(['$routeProvider',
                 templateUrl: 'template/home.html',
                 controller: 'homeController'
             }).
-            when('/List',{
-                templateUrl: 'template/acitivitylist.html',
-                controller: 'listActivityController'
-            }).when('/activity/:id',{
-                templateUrl: 'template/activity.html',
-                controller: 'editActivityController'
-            }).when('/add',{
-                templateUrl: 'template/addActivity.html',
-                controller: 'addActivityController'
-            }).when('/edit/:id',{
-                templateUrl: 'template/addActivity.html',
-                controller: 'editActivityController'
+            when('/register',{
+                templateUrl: 'template/register.html',
+                controller: 'addUserController'
             }).
             when('/map',{
                 templateUrl: 'template/map.html',
@@ -52,6 +40,26 @@ watApp.config(['$routeProvider',
             when('/contact',{
                 templateUrl: 'template/contact.html',
                 controller: ''
+            }).
+            when('/activity',{
+                templateUrl: 'template/activity.html',
+                controller: 'listActivityController'
+            }).
+            when('/activity/:id',{
+                templateUrl: 'template/activity.html',
+                controller: 'editActivityController'
+            }).
+            when('/activity/:id',{
+                templateUrl: 'template/addActivity.html',
+                controller: 'editActivityController'
+            }).
+            when('/question',{
+                templateUrl: 'template/questionList.html',
+                controller: 'listQuestionController'
+            }).
+            when('/question/:id',{
+                templateUrl: 'template/answerQuestion.html',
+                controller: 'editQuestionController'
             }).
             otherwise({redirectTo: '/home'});
     }]);

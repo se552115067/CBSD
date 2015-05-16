@@ -1,43 +1,54 @@
-<div class="container slider">
-    <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
-         ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-         ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+<div class="form-inline">
+    <div ng-controller="loginController" >
+        <form class="form-inline" ng-hide="user">
+            <div class="form-group ">
+                <label for="username" class=" active col-sm-3 control-label" translate>text.username</label>
+                <div class="col-sm-3">
+                    <input id="username" ng-model="username" type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label" translate>text.password</label>
+                <div class="col-sm-3">
+                    <input id="password" ng-model="password" type="password" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <button translate type="submit" class="btn btn-primary" ng-click="login()">button.login</button>
+                </div>
+            </div>
+            <div class="col-sm-8 col-sm-offset-8">
+                <a href="#/register" translate>button.register</a>
+                </div>
+        </form>
+        <form class="form-inline" ng-show="user" >
+            <div class="H6 col-sm-5 col-sm-offset-3 text-right">
+                <label translate>text.hello</label> {{user.name}}
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 ">
+                    <button translate type="submit"  class="btn btn-primary" ng-click="logout()">button.logout</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container ng-hide" ng-show="initialized">
+    <div class="error" ng-show="error" translate>text.wrongUsername</div>
+</div>
 
-    <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
-    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+<div class="container slider">
+    <img ng-repeat="slide in slides" class="slide slide-animation" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+    <a class="arrow prev" href="#/home" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="#/home" ng-click="prevSlide()"></a>
     <nav class="nav">
         <div class="wrapper">
             <ul class="dots">
                 <li class="dot" ng-repeat="slide in slides">
-                    <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
+                    <a href="#/home" ng-class="{'active':isCurrentSlideIndex($index)}"
                        ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
             </ul>
         </div>
     </nav>
 </div>
-
-
-<!--<header>-->
-    <!--&lt;!&ndash; Indicators &ndash;&gt;-->
-    <!--<ol class="carousel-indicators" >-->
-        <!--<li ng-repeat="slide in slides" data-target="#myCarousel" data-slide-to="{{$index+1}}" ng-class="{active : $first}"></li>-->
-    <!--</ol>-->
-
-    <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
-    <!--&lt;!&ndash;<div ng-repeat="slide in slides" class="carousel-inner" >&ndash;&gt;-->
-        <!--&lt;!&ndash;<div  class="item" ng-class="{active : $first}">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="fill" ng-style="background-image:url('{{slide.image}}');"></div>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-    <!--&lt;!&ndash; Controls &ndash;&gt;-->
-    <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
-        <!--<span class="icon-prev"></span>-->
-    <!--</a>-->
-    <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">-->
-        <!--<span class="icon-next"></span>-->
-    <!--</a>-->
-<!--</header>-->
-

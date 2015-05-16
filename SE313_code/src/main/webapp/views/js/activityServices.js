@@ -8,14 +8,6 @@ activityService.factory('activityService',function($resource){
         }});
 
 })
-
-activityService.factory('deleteImgService',function($resource){
-    return $resource('/imgcontrol/:id/:imgid', { id: '@_id',imgid: '@_imgid' }, {
-        update: {
-            method: 'DELETE' // this method issues a PUT request
-        }});
-
-})
 activityService.factory('queryActivityService',function($resource){
     return $resource('/getActivity/?name=:name',
         {query:{method:'GET',params:{name:''},isArray:true}

@@ -2,23 +2,22 @@
 var activityMainController = angular.module('activityMainControllers', ['activityServices']);
 activityMainController.controller('addActivityController', ['$scope', '$http', '$location', '$rootScope','activityService',
     function ($scope, $http, $location, $rootScope,activityService) {
-        $scope.activity = {};
+        $scope.product = {};
         $scope.add = true;
         $scope.edit = false;
-        $scope.addActivity = function (flowFiles) {
+        $scope.addProduct = function () {
             activityService.save($scope.activity,function(data){
-                 //after adding the object, add a new picture
-                console.log(flowFiles);
-                 //get the product id which the image will be add
-                var activityid = data.id;
+                // after adding the object, add a new picture
+                // get the product id which the image will be addded
+                var Activityid = data.id;
                 // set location
-                flowFiles.opts.target = '/activityImage/add';
-                flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={activityId:activityid};
-                flowFiles.upload();
+                //flowFiles.opts.target = '/activityImage/add';
+                //flowFiles.opts.testChunks = false;
+                //flowFiles.opts.query ={Activityid:Activityid};
+                //flowFiles.upload();
 
                 $rootScope.addSuccess = true;
-                $location.path("List");
+                $location.path("activity");
 
                 $scope.$apply();
 
@@ -58,24 +57,15 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
 
 
     }]);
-
-activityMainController.controller('editActivityController', ['$scope','deleteImgService', '$http', '$routeParams', '$location', '$rootScope','$route','activityService',
-    function ($scope,deleteImgService, $http, $routeParams, $location, $rootScope,$route,activityService) {
+activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
+    function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
         $scope.add = false;
         $scope.edit = true;
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;
         });
-        $scope.deleteImg = function (id,imgid) {
-            var answer = confirm("Do you want to delete the Image?");
-            if (answer) {
-                deleteImgService.delete({id:id,imgid:imgid},function(){
-                    $rootScope.deleteSuccess = true;
-                    $route.reload();
-                })
-            }
-        }
+
         $scope.editActivity = function (flowFiles) {
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
@@ -85,7 +75,7 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
                 flowFiles.opts.query ={Activityid:Activityid};
                 flowFiles.upload();
                 $rootScope.editSuccess = true;
-                $location.path("List");
+                $location.path("activity");
                 $scope.$apply();
             });
         }

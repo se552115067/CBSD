@@ -17,7 +17,7 @@ activityMainController.controller('addActivityController', ['$scope', '$http', '
                 //flowFiles.upload();
 
                 $rootScope.addSuccess = true;
-                $location.path("List");
+                $location.path("activity");
 
                 $scope.$apply();
 
@@ -57,35 +57,16 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
 
 
     }]);
-<<<<<<< HEAD
-
-activityMainController.controller('editActivityController', ['$scope','deleteImgService', '$http', '$routeParams', '$location', '$rootScope','$route','activityService',
-    function ($scope,deleteImgService, $http, $routeParams, $location, $rootScope,$route,activityService) {
-=======
 activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
     function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
         $scope.add = false;
         $scope.edit = true;
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;
         });
-<<<<<<< HEAD
-        $scope.deleteImg = function (id,imgid) {
-            var answer = confirm("Do you want to delete the Image?");
-            if (answer) {
-                deleteImgService.delete({id:id,imgid:imgid},function(){
-                    $rootScope.deleteSuccess = true;
-                    $route.reload();
-                })
-            }
-        }
-        $scope.editActivity = function   (flowFiles) {
-=======
 
         $scope.editActivity = function (flowFiles) {
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
                 var Activityid = data.id;
@@ -94,11 +75,7 @@ activityMainController.controller('editActivityController', ['$scope', '$http', 
                 flowFiles.opts.query ={Activityid:Activityid};
                 flowFiles.upload();
                 $rootScope.editSuccess = true;
-<<<<<<< HEAD
-                $location.path("List");
-=======
-                $location.path("ListActivity");
->>>>>>> 4e641d249dfedc80ad3a8e9e290e54f041169748
+                $location.path("activity");
                 $scope.$apply();
             });
         }

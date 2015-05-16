@@ -6,9 +6,13 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-    'flow',
+    'registerControllers',
+    'historyControllers',
     'activityMainControllers',
-    'questionMainControllers'
+    'questionMainControllers',
+    'languageControllers',
+    'languageServices',
+    'pascalprecht.translate'
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -17,31 +21,52 @@ watApp.config(['$routeProvider',
                 templateUrl: 'template/home.html',
                 controller: 'homeController'
             }).
-            when('/List',{
-                templateUrl: 'template/acitivitylist.html',
+            when('/register',{
+                templateUrl: 'template/register.html',
+                controller: 'addUserController'
+            }).
+            when('/map',{
+                templateUrl: 'template/map.html',
+                controller: ''
+            }).
+            when('/history',{
+                templateUrl: 'template/history.html',
+                controller: 'showHistoryController'
+            }).
+            when('/history/:id',{
+                templateUrl: 'template/editHistory.html',
+                controller: 'editHistoryController'
+            }).
+            when('/contact',{
+                templateUrl: 'template/contact.html',
+                controller: ''
+            }).
+            when('/activity',{
+                templateUrl: 'template/activity.html',
                 controller: 'listActivityController'
-            }).when('/activity/:id',{
+            }).
+            when('/activity/:id',{
                 templateUrl: 'template/activity.html',
                 controller: 'editActivityController'
-            }).when('/add',{
-                templateUrl: 'template/addActivity.html',
-                controller: 'addActivityController'
-            }).when('/edit/:id',{
+            }).
+            when('/activity/:id',{
                 templateUrl: 'template/addActivity.html',
                 controller: 'editActivityController'
-            }).when('/question',{
+            }).
+            when('/question',{
                 templateUrl: 'template/questionList.html',
                 controller: 'listQuestionController'
-            }).when('/question/:id',{
-            templateUrl: 'template/answerQuestion.html',
-            controller: 'editQuestionController'
-        }).
+            }).
+            when('/question/:id',{
+                templateUrl: 'template/answerQuestion.html',
+                controller: 'editQuestionController'
+            }).
             otherwise({redirectTo: '/home'});
     }]);
 
 
 watApp.config(['$locationProvider', '$httpProvider', function($locationProvider, $httpProvider){
-    /* Register error provider t    hat shows message on failed requests or redirects to login page on
+    /* Register error provider that shows message on failed requests or redirects to login page on
      * unauthenticated requests */
     $httpProvider.interceptors.push(function($q,$rootScope,$location){
         return {
@@ -124,18 +149,10 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     }
     $rootScope.initialized = true;
 });
-watApp.config(['flowFactoryProvider', function (flowFactoryProvider) {
-    flowFactoryProvider.defaults = {
-        target: '',
-        permanentErrors: [ 500, 501],
-        maxChunkRetries: 1,
-        chunkRetryInterval: 5000,
-        simultaneousUploads: 4,
-        singleFile: false
-    };
-    flowFactoryProvider.on('catchAll', function (event) {
-        console.log('catchAll', arguments);
-    });
-    // Can be used with different implementations of Flow.js
-    // flowFactoryProvider.factory = fustyFlowFactory;
-}]);
+
+watApp.config(function($translateProvider){
+    $translateProvider.useUrlLoader('/messageBundle');
+    $translateProvider.useStorage('UrlLanguageStorage');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+})

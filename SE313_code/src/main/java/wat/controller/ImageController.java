@@ -2,11 +2,9 @@ package wat.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import wat.entity.Activity;
 import wat.entity.Image;
 import wat.service.ImageService;
@@ -14,13 +12,14 @@ import wat.service.ImageService;
 /**
  * Created by Punjasin on 5/15/2015.
  */
-@RestController
+@Controller
 public class ImageController {
     @Autowired
     ImageService imageService;
     @RequestMapping(value = "imgcontrol/{id}/{imgid}",method = RequestMethod.DELETE)
     public Image deleteimage(@PathVariable("id") Long id,@PathVariable("imgid") long imgid){
-       Image temp = imageService.getImg(imgid);
+
+
         System.out.println("At least am here");
 //        List<Image> temp=new ArrayList<Image>();
 //        for (Image str : activityService.getActivity(id).getImages()) {
@@ -35,12 +34,7 @@ public class ImageController {
 //                imageService.delete(imgid);
 //            }
 //        }
- try {
-     imageService.delete(imgid, id);
- }
- catch (Exception e){
-System.out.print(e.toString());
- }
-        return temp;
+
+        return imageService.delete(imgid,id);
     }
 }
