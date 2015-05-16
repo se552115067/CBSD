@@ -2,19 +2,19 @@
 var activityMainController = angular.module('activityMainControllers', ['activityServices']);
 activityMainController.controller('addActivityController', ['$scope', '$http', '$location', '$rootScope','activityService',
     function ($scope, $http, $location, $rootScope,activityService) {
-        $scope.product = {};
-        $scope.add = true;
-        $scope.edit = false;
-        $scope.addProduct = function () {
+        $scope.activity = {};
+        $scope.addAc = true;
+        $scope.editAc = false;
+        $scope.addProduct = function (flowFiles) {
             activityService.save($scope.activity,function(data){
                 // after adding the object, add a new picture
                 // get the product id which the image will be addded
-                var Activityid = data.id;
+                var activityid = data.id;
                 // set location
-                //flowFiles.opts.target = '/activityImage/add';
-                //flowFiles.opts.testChunks = false;
-                //flowFiles.opts.query ={Activityid:Activityid};
-                //flowFiles.upload();
+                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.testChunks = false;
+                flowFiles.opts.query ={activityid:activityid};
+                flowFiles.upload();
 
                 $rootScope.addSuccess = true;
                 $location.path("activity");
@@ -24,7 +24,6 @@ activityMainController.controller('addActivityController', ['$scope', '$http', '
 
             });
         };
-
 
 
     }]);
@@ -59,8 +58,8 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
     }]);
 activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
     function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
-        $scope.add = false;
-        $scope.edit = true;
+        $scope.addAc = false;
+        $scope.editAc = true;
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;

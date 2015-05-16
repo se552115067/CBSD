@@ -12,7 +12,8 @@ var watApp = angular.module('watApp', [
     'questionMainControllers',
     'languageControllers',
     'languageServices',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'flow'
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
@@ -42,14 +43,18 @@ watApp.config(['$routeProvider',
                 controller: ''
             }).
             when('/activity',{
-                templateUrl: 'template/activity.html',
+                templateUrl: 'template/activitylist.html',
                 controller: 'listActivityController'
+            }).
+            when('/activity/add',{
+                templateUrl: 'template/addActivity.html',
+                controller: 'addActivityController'
             }).
             when('/activity/:id',{
                 templateUrl: 'template/activity.html',
                 controller: 'editActivityController'
             }).
-            when('/activity/:id',{
+            when('/edit/:id',{
                 templateUrl: 'template/addActivity.html',
                 controller: 'editActivityController'
             }).
