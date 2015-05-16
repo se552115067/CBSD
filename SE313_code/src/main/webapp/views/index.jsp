@@ -35,8 +35,22 @@
     <script src="js/ActivityController.js"></script>
     <script src="js/activityServices.js"></script>
     <script src="js/securityController.js"></script>
+    <script src="js/languageServices.js"></script>
+    <script src="js/languageControllers.js"></script>
 </head>
 <body style="background-color: #000000;">
+<div ng-controller="languageController">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
+                <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="whole-page">
             <div ng-include src="'template/topnav.html'"></div>
 

@@ -43,34 +43,33 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
-    // The localization here
-//    @Bean
-//    public LocaleResolver localeResolver(){
-//        final SessionLocaleResolver ret = new SessionLocaleResolver();
-//        ret.setDefaultLocale(new Locale("en"));
-//        return ret;
-//    }
-//
-//    @Bean
-//    public MessageSource messageSource(){
-//        final SerializableResourceBundleMessageSource ret = new SerializableResourceBundleMessageSource();
-//        ret.setBasename("classpath:message");
-//        ret.setDefaultEncoding("UTF-8");
-//        return ret;
-//    }
-//
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry){
-//        registry.addInterceptor(localeChangeInterceptor());
-//    }
-//
-//    @Bean
-//    public HandlerInterceptor localeChangeInterceptor() {
-//        LocaleChangeInterceptor localChangeInterceptor = new LocaleChangeInterceptor();
-//        localChangeInterceptor.setParamName("lang");
-//        return localChangeInterceptor;
-//    }
-//
+    //    The localization here
+    @Bean
+    public LocaleResolver localeResolver(){
+        final SessionLocaleResolver ret = new SessionLocaleResolver();
+        ret.setDefaultLocale(new Locale("en"));
+        return ret;
+    }
+
+    @Bean
+    public MessageSource messageSource(){
+        final SerializableResourceBundleMessageSource ret = new SerializableResourceBundleMessageSource();
+        ret.setBasename("classpath:message");
+        ret.setDefaultEncoding("UTF-8");
+        return ret;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry){
+        registry.addInterceptor(localeChangeInterceptor());
+    }
+
+    @Bean
+    public HandlerInterceptor localeChangeInterceptor() {
+        LocaleChangeInterceptor localChangeInterceptor = new LocaleChangeInterceptor();
+        localChangeInterceptor.setParamName("lang");
+        return localChangeInterceptor;
+    }
 //
 //    @Bean
 //    public MultipartResolver multipartResolver() {

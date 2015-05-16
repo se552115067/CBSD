@@ -6,8 +6,21 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-    'activityMainControllers'
+    'activityMainControllers',
+    'registerControllers',
+    'languageControllers',
+    'languageServices',
+    'pascalprecht.translate'
 ])
+
+watApp.config(function($translateProvider){
+    $translateProvider.useUrlLoader('/messageBundle');
+    $translateProvider.useStorage('UrlLanguageStorage');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+
+})
+
 watApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
