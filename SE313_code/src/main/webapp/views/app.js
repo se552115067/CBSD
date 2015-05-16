@@ -6,21 +6,13 @@ var watApp = angular.module('watApp', [
     'ngAnimate',
     'homeControllers',
     'securityControllers',
-    'activityMainControllers',
     'registerControllers',
+    'historyControllers',
+    'activityMainControllers',
     'languageControllers',
     'languageServices',
     'pascalprecht.translate'
 ])
-
-watApp.config(function($translateProvider){
-    $translateProvider.useUrlLoader('/messageBundle');
-    $translateProvider.useStorage('UrlLanguageStorage');
-    $translateProvider.preferredLanguage('en');
-    $translateProvider.fallbackLanguage('en');
-
-})
-
 watApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
@@ -28,18 +20,25 @@ watApp.config(['$routeProvider',
                 templateUrl: 'template/home.html',
                 controller: 'homeController'
             }).
-            when('/List',{
-                templateUrl: 'template/acitivitylist.html',
-                controller: 'listActivityController'
-            }).when('/activity/:id',{
-                templateUrl: 'template/activity.html',
-                controller: 'editActivityController'
-            }).when('/add',{
-                templateUrl: 'template/addActivity.html',
-                controller: 'addActivityController'
-            }).when('/edit/:id',{
-                templateUrl: 'template/addActivity.html',
-                controller: 'editActivityController'
+            when('/register',{
+                templateUrl: 'template/register.html',
+                controller: 'addUserController'
+            }).
+            when('/map',{
+                templateUrl: 'template/map.html',
+                controller: ''
+            }).
+            when('/history',{
+                templateUrl: 'template/history.html',
+                controller: 'showHistoryController'
+            }).
+            when('/history/:id',{
+                templateUrl: 'template/editHistory.html',
+                controller: 'editHistoryController'
+            }).
+            when('/contact',{
+                templateUrl: 'template/contact.html',
+                controller: ''
             }).
             otherwise({redirectTo: '/home'});
     }]);
@@ -129,3 +128,10 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     }
     $rootScope.initialized = true;
 });
+
+watApp.config(function($translateProvider){
+    $translateProvider.useUrlLoader('/messageBundle');
+    $translateProvider.useStorage('UrlLanguageStorage');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+})

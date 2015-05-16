@@ -43,7 +43,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
-    //    The localization here
+    //The localization here
     @Bean
     public LocaleResolver localeResolver(){
         final SessionLocaleResolver ret = new SessionLocaleResolver();
@@ -70,11 +70,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         localChangeInterceptor.setParamName("lang");
         return localChangeInterceptor;
     }
-//
-//    @Bean
-//    public MultipartResolver multipartResolver() {
-//        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-//        multipartResolver.setMaxUploadSize(1000000);
-//        return multipartResolver;
-//    }
+
+
+    @Bean
+    public MultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(1000000);
+        return multipartResolver;
+    }
 }

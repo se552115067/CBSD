@@ -1,0 +1,19 @@
+<div class="row-fluid">
+    <h1>Edit History</h1>
+    <div class="col-md-4">
+        <form name="editform" novalidate>
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="description">Description :</label>
+                <input ng-model="history.description" class="form-control" id="description" name="description" placeholder="description" required/>
+
+                <div class="error" role="alert" ng-show="editform.description.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Description is Required!
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="editHistory()">Edit</button>
+        </form>
+    </div>
+</div>

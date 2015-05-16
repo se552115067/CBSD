@@ -1,5 +1,5 @@
 <div class="row-fluid">
-        <h1 translate>text.register</h1>
+        <h1>Register</h1>
     <div class="col-md-4">
         <form name="editform" novalidate>
             <div class="form-group">
@@ -7,9 +7,9 @@
                 <label for="username" translate>text.username</label>
                 <input ng-model="user.username" class="form-control" id="username" name="username" placeholder="username" required/>
 
-                <div class="error" role="alert" ng-show="editform.username.$error.required" >
+                <div class="error" role="alert" ng-show="editform.username.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only"><label translate>text.error</label></span>
+                    <span class="sr-only" translate>text.error</span>
                     <label translate>text.unRequire</label>
                 </div>
             </div>
@@ -20,7 +20,7 @@
 
                 <div class="error" role="alert" ng-show="editform.password.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only" translate>text.error</span>
+                    <span class="sr-only"translate>text.error</span>
                     <label translate>text.pwRequire</label>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <input ng-model="user.name" class="form-control" id="name"
                        placeholder="name" name="name" required/>
 
-                <div class="error" role="alert" ng-show="editform.name.$error.required" >
+                <div class="error" role="alert" ng-show="editform.name.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only" translate>text.error</span>
                     <label translate>text.displayRequire</label>
@@ -41,12 +41,12 @@
                 <input ng-model="user.email" name="email" class="form-control" id="email"
                        placeholder="email" type="email" required/>
 
-                <div class="error" role="alert" ng-show="editform.email.$error.required" >
+                <div class="error" role="alert" ng-show="editform.email.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only" translate>text.error</span>
                     <label translate>text.emailRequire</label>
                 </div>
-                <div class="error" role="alert" ng-show="editform.email.$error.email" >
+                <div class="error" role="alert" ng-show="editform.email.$error.email">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only" translate>text.error</span>
                     <label translate>text.emailFormat</label>

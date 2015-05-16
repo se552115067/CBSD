@@ -57,7 +57,6 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
 
 
     }]);
-zz
 activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
     function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
         $scope.add = false;

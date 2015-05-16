@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wat Phra Singh</title>
+    <title>Wat Phar Singh</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -31,28 +31,32 @@
     <!-- add i18n script -->
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+    <script src="js/homeController.js"></script>
+    <script src="js/securityController.js"></script>
+    <script src="js/registerController.js"></script>
+    <script src="js/historyService.js"></script>
+    <script src="js/historyController.js"></script>
+    <script src="js/registerService.js"></script>
+    <script src="js/activityServices.js"></script>
+    <script src="js/ActivityController.js"></script>
     <script src="js/languageServices.js"></script>
     <script src="js/languageControllers.js"></script>
 
-    <script src="js/homeController.js"></script>
-    <script src="js/ActivityController.js"></script>
-    <script src="js/activityServices.js"></script>
-    <script src="js/securityController.js"></script>
+
 
 </head>
 <body style="background-color: #000000;">
-<%--<div ng-controller="languageController">--%>
-    <%--<div class="container-fluid">--%>
-        <%--<div class="collapse navbar-collapse">--%>
-            <%--<ul class="nav navbar-nav navbar-right">--%>
-                <%--<li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>--%>
-                <%--<li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>--%>
+<div ng-controller="languageController">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
+                <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
 
-            <%--</ul>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
-
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="whole-page">
             <div ng-include src="'template/topnav.html'"></div>
 
