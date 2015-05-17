@@ -8,6 +8,8 @@
    <div >
        <li>{{activity.name}}</li>
        <li>{{activity.description}}</li>
+       <li>{{activity.date | date: 'medium'}}</li>
+
        <!--<div ng-repeat="image in activity.images" class="textcenter">-->
            <!--<img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail">-->
        <!--</div>-->

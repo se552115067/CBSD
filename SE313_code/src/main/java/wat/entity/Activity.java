@@ -37,35 +37,64 @@ public class Activity implements Comparable {
     public Activity(String name, String description, Date date,String venue) {
         this.name = name;
         this.description = description;
-        
+        System.out.print("This d");
         this.date = date;
         this.venue=venue;
     }
+
+    public Activity(String name, String description, String lang, Date date, String venue) {
+        this.name = name;
+        this.description = description;
+        this.lang = lang;
+        this.date = date;
+        this.venue = venue;
+        System.out.print("This e");
+    }
+
     public Activity(String name, String description, String lang, Date date, Set<Image> images) {
         this.name = name;
         this.description = description;
         this.lang = lang;
         this.date = date;
 this.venue="asdsad";
+        System.out.print("This f");
         this.images = images;
     }
-
+    public Activity(String name, String description, String lang, Date date, String venue, Image images) {
+        this.name = name;
+        this.description = description;
+        this.lang = lang;
+        this.date = date;
+        System.out.print("This g");
+        this.venue = venue;
+        this.images.add(images);
+    }
     public Activity(String name, String description, String lang, Date date, String venue, Set<Image> images) {
         this.name = name;
         this.description = description;
         this.lang = lang;
         this.date = date;
-
+System.out.print("This a");
         this.venue = venue;
         this.images = images;
     }
-
+    public Activity(Long id,String name, String description, String lang, Date date, String venue, Set<Image> images) {
+       this.Id=id;
+        this.name = name;
+        this.description = description;
+        this.lang = lang;
+        this.date = date;
+        System.out.print("This a");
+        this.venue = venue;
+        this.images = images;
+    }
     public Activity(Long id,String aname, String adescription, String lang, Set<Image> images) {
         this.Id=id;
         this.name = aname;
         this.description = adescription;
         this.lang = lang;
         this.images = images;
+        System.out.print("This b");
     }
 
     public Activity(Long id,String aname, String adescription, String lang, Image images) {
@@ -74,10 +103,12 @@ this.venue="asdsad";
         this.description = adescription;
         this.lang = lang;
         this.images.add(images);
+        System.out.print("This c");
     }
 
     public Activity() {
-        this.venue="assssdsad";
+
+
     }
 
     public Date getDate() {

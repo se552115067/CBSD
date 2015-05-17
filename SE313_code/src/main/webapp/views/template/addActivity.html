@@ -66,6 +66,12 @@
                     Venue is Required!
                 </div>
             </div>
+            <div ng-show=false class="form-group">
+                <label for="activitylang">Lang</label>
+                <input ng-model="activity.lang" name="activitylang" class="form-control" id="activitylang"
+                       ng-init="activity.lang=currentLocale" type="text">
+
+            </div>
 
             <div >
                 <input type="file" flow-btn />

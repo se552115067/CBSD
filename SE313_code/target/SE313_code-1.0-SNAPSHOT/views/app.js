@@ -17,6 +17,7 @@ var watApp = angular.module('watApp', [
 ])
 watApp.config(['$routeProvider',
     function($routeProvider) {
+
         $routeProvider.
             when('/home',{
                 templateUrl: 'template/home.html',
@@ -85,6 +86,7 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
                 var status = rejection.status;
                 var config = rejection.config;
                 var method = config.method;
+
                 var url = config.url;
 
                 if (status == 401){
@@ -109,8 +111,10 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     $httpProvider.interceptors.push(function ($q,$rootScope,$location){
         return {
             'request' : function(config){
+
                 if (angular.isDefined($rootScope.authToken)){
                     var authToken = $rootScope.authToken;
+
                     if (exampleAppConfig.useAuthTokenHeader){
                         config.headers['X-Auth-Token'] = authToken;
                     }else{
@@ -151,6 +155,7 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
     var originalPath = $location.path();
     $location.path("/home");
     var authToken = $cookieStore.get('authToken');
+
     if (authToken != undefined){
         $rootScope.authToken = authToken;
         UserService.get(function(user){

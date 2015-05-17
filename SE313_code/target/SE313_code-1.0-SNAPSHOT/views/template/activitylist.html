@@ -25,7 +25,8 @@
 
         <tr ng-repeat="activity in activities">
 
-            <td><a href="#/activity/{{activity.id}}">{{activity.name}}</a></td>
+            <td ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.name}}</a></td>
+            <td ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.date | date:'medium'}}</a></td>
         </tr>
 
     </table>

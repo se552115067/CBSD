@@ -13,7 +13,7 @@ activityMainController.controller('addActivityController', ['$scope', '$http', '
                 // set location
                 flowFiles.opts.target = '/activityImage/add';
                 flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={activityid:activityid};
+                flowFiles.opts.query ={activityId:activityid};
                 flowFiles.upload();
 
                 $rootScope.addSuccess = true;
