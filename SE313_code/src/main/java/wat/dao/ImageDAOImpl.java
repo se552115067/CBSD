@@ -39,8 +39,6 @@ public class ImageDAOImpl implements ImageDAO {
     @Override
     public Image delete(Image img) {
         imageRepository.delete(img);
-        img.setId(null);
-        System.out.println("Me too");
         return img;
     }
 }

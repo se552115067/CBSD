@@ -6,6 +6,7 @@ import wat.dao.ActivityDAO;
 import wat.dao.ImageDAO;
 import wat.entity.Image;
 import wat.repository.ActivityRepository;
+import wat.repository.HistoryRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -22,6 +23,8 @@ public class imageServiceImpl implements ImageService {
     ImageDAO imgdao;
     @Autowired
     ActivityRepository activityRepository;
+    @Autowired
+    HistoryRepository historyRepository;
     @Override
     public List<Image> getImages() {
         return imgdao.getImages();
@@ -47,6 +50,13 @@ public class imageServiceImpl implements ImageService {
         activityRepository.getOne(activityid).getImages().remove(imgdao.Get(imgid));
         Image temp=imgdao.Get(imgid);
 
+        return imgdao.delete(temp);
+    }
+
+    @Override
+    public Image deleteHistoryImg(Long id) {
+        historyRepository.findOne(1l).getImages().remove(imgdao.Get(id));
+        Image temp=imgdao.Get(id);
         return imgdao.delete(temp);
     }
 }

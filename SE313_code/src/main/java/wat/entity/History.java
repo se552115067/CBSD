@@ -23,6 +23,7 @@ public class History {
     @Id
     @GeneratedValue
     Long Id;
+    @Column(length=55600)
     String description;
     String lang;
     @OneToMany(fetch = FetchType.EAGER)

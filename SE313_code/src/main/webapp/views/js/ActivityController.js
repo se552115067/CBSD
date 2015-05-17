@@ -32,7 +32,6 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
     function ($scope, $http, $rootScope,activityService,$route) {
 
         activityService.query(function(data){
-
             $scope.activities = data;
         });
 
@@ -50,28 +49,39 @@ activityMainController.controller('listActivityController', ['$scope', '$http', 
                     $rootScope.deleteSuccess = true;
                     $route.reload();
                 })
+
             }
         }
 
 
 
     }]);
-activityMainController.controller('editActivityController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','activityService',
-    function ($scope, $http, $routeParams, $location, $rootScope,activityService) {
+activityMainController.controller('editActivityController', ['$scope','deleteImgService', '$http', '$routeParams', '$location', '$rootScope','activityService','$route',
+    function ($scope,deleteImgService, $http, $routeParams, $location, $rootScope,activityService,$route) {
         $scope.addAc = false;
         $scope.editAc = true;
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;
         });
+        $scope.deleteImg = function (id,imgid) {
+            var answer = confirm("Do you want to delete the Image?");
+            if (answer) {
+                deleteImgService.delete({id:id,imgid:imgid},function(){
+                    $rootScope.deleteSuccess = true;
+                    $route.reload();
+                })
+            }
+        };
 
         $scope.editActivity = function (flowFiles) {
+            console.log( $scope.activity.images);
+               $scope.activity.images = null;
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
-                var Activityid = data.id;
                 flowFiles.opts.target = '/activityImage/add';
                 flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={Activityid:Activityid};
+                flowFiles.opts.query ={activityid:$scope.activity.id};
                 flowFiles.upload();
                 $rootScope.editSuccess = true;
                 $location.path("activity");

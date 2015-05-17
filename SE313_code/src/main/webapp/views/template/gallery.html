@@ -1,0 +1,18 @@
+
+
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Gallery</div>
+
+
+    <!-- Table -->
+    <table class="table table-hover">
+
+        <tr ng-repeat="activity in activities">
+            <td>    <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
+            <a href="#/gallery/{{activity.id}}">{{activity.name}}</a></td>
+        </tr>
+
+    </table>
+</div>

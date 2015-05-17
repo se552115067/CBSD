@@ -13,4 +13,5 @@ public interface ImageService {
     Image Update(Image img);
     Image add(Image img);
     Image delete(Long id,Long pid);
+    Image deleteHistoryImg(Long id);
 }

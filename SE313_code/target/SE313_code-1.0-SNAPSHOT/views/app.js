@@ -65,6 +65,12 @@ watApp.config(['$routeProvider',
             when('/question/:id',{
                 templateUrl: 'template/answerQuestion.html',
                 controller: 'editQuestionController'
+            }).when('/gallery',{
+                templateUrl: 'template/gallery.html',
+                controller: 'listActivityController'
+            }).when('/gallery/:id',{
+                templateUrl: 'template/album.html',
+                controller: 'editActivityController'
             }).
             otherwise({redirectTo: '/home'});
     }]);
@@ -161,3 +167,7 @@ watApp.config(function($translateProvider){
     $translateProvider.preferredLanguage('en');
     $translateProvider.fallbackLanguage('en');
 })
+
+watApp.config(['$compileProvider', function($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|data):/);
+}]);

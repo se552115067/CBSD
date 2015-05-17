@@ -4,12 +4,15 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
+import wat.entity.Activity;
 import wat.entity.History;
 import wat.entity.Role;
 import wat.entity.User;
+import wat.repository.ActivityRepository;
 import wat.repository.HistoryRepository;
 import wat.repository.RoleRepository;
 import wat.repository.UserRepository;
+import wat.service.ImageUtil;
 
 import java.util.*;
 
@@ -21,6 +24,8 @@ import java.util.*;
 public class DatabaseInitializationBean implements InitializingBean {
     @Autowired
     HistoryRepository historyRepository;
+    @Autowired
+    ActivityRepository activityRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -31,7 +36,10 @@ public class DatabaseInitializationBean implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
 
         historyRepository.save(new History(1l,"en","Thi is Temple"));
-
+        Activity[] initActivity =  {
+                new Activity(1l,"Kindle","the good book reader","EN", ImageUtil.getImage("pic/1.JPG"))
+        };
+        activityRepository.save(Arrays.asList(initActivity));
         // add user
         Role adminRole = new Role("admin");
         Role userRole = new Role("user");
@@ -49,7 +57,7 @@ public class DatabaseInitializationBean implements InitializingBean {
         User user = new User();
         user.setName("user");
         user.setUsername("user");
-        user.setEmail("user@yahoo.com");
+        user.setEmail("punjasin@gmail.com");
         user.setPassword("123456");
         Set<Role> roles2 = new HashSet<>();
         roles2.add(userRole);
