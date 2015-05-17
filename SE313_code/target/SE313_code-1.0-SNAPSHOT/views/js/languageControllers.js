@@ -10,6 +10,16 @@ var langController =angular.module('languageControllers',['languageServices']);
                 $translate.use(locale);
                 $location.search('lang',locale);
 
-                }
 
-            }])
+                //$scope.swapLang;
+                //
+                //if(locale=='en'){
+                //    $scope.swapLang = true;
+                //}else{
+                //    $scope.swapLang=false;
+                //}
+
+            }
+
+
+        }])
