@@ -48,16 +48,16 @@
 
 
 </head>
-<body style="background-color: #000000;">
+<body style="background-image: url('pic/ll.jpg');">
 
-<div class="whole-page">
+<div class="extra1">
             <div ng-include src="'template/topnav.html'"></div>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid container-custom">
         <div class="row">
 
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <ng-view>Loading...</ng-view>
 
             </div>
@@ -68,7 +68,7 @@
     <!-- In production use:
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
     -->
-    <div><footer>Copyright @ 2015 Aslan,CAMT,CMU</footer></div>
+    <div class="container-fluid"><footer>Copyright @ 2015 Aslan,CAMT,CMU</footer></div>
 </div>
 </body>
 </html>

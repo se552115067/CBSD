@@ -5,15 +5,15 @@
     <!-- Default panel contents -->
     <div class="panel-heading" translate>menubar.gallery</div>
 
-    Test
 
     <!-- Table -->
-    <table class="table table-hover">
+    <div class="row row-custom " >
 
-        <tr ng-repeat="activity in activities">
-            <td>    <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
-            <a href="#/gallery/{{activity.id}}">{{activity.name}}</a></td>
-        </tr>
+        <div class="col-md-4"  ng-repeat="activity in activities">
+            <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
+            <a href="#/gallery/{{activity.id}}">{{activity.name}}</a></div>
+        <div class="clearfix" ng-if="$index%3==2"></div>
+            <div ng-repeat-end=""></div>
 
-    </table>
+    </div>
 </div>

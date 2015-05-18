@@ -21,13 +21,17 @@
 
 
     <!-- Table -->
-    <table class="table table-hover">
+    <br>
 
-        <tr ng-repeat="activity in activities">
+        <div class="row " ng-repeat="activity in activities">
+            <div class="col-md-4 col-md-offset-1">
+            <div ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.name}}</a>
+                <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
+            {{activity.date | date:'medium'}}
 
-            <td ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.name}}</a></td>
-            <td ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.date | date:'medium'}}</a></td>
-        </tr>
+                <div class="col-md-6" > {{activity.description}}</div>
+            </div>
+            </div>
 
-    </table>
+    </div>
 </div>

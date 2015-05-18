@@ -1,37 +1,45 @@
-<div ng-controller="languageController">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
-                <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-10 col-md-offset-2">
+        <div  class="form-inline ">
 
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="form-inline">
     <div ng-controller="loginController" >
-        <form class="form-inline" ng-hide="user">
-            <div class="form-group ">
-                <label for="username" class=" active col-sm-3 control-label" translate>text.username</label>
-                <div class="col-sm-3">
-                    <input id="username" ng-model="username" type="text" class="form-control" />
+
+        <div class="form-group">
+        <div ng-controller="languageController">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
+                        <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
+
+                    </ul>
                 </div>
             </div>
+        </div>
+        </div>
+
+            <div class="form-group ">
+                <div class="input-group">
+                <span for="username" class="active input-group-addon" translate>text.username<i class="fa fa-user fa-fw"></i></span>
+                    <input id="username" ng-model="username" type="text" class="form-control" placeholder='username' />
+                </div>
+            </div>
+
             <div class="form-group">
-                <label for="password" class="col-sm-3 control-label" translate>text.password</label>
-                <div class="col-sm-3">
+                <div class="input-group">
+                <span for="password" class="active input-group-addon" translate>text.password<i class="fa fa-key fa-fw"></i></span>
                     <input id="password" ng-model="password" type="password" class="form-control" />
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-3 col-sm-offset-3">
-                    <button translate type="submit" class="btn btn-primary" ng-click="login()">button.login</button>
-                </div>
-            </div>
-            <div class="col-sm-8 col-sm-offset-8">
-                <a href="#/register" translate>button.register</a>
-                </div>
+
+                    <button translate type="submit" class="btn btn-info" ng-click="login()">button.login</button>
+        <a href="#/register" class="btn btn-success" role="button" translate>button.register</a>
+
+    </div>
+        </div>
+           </div>
+    </div>
+
         </form>
         <form class="form-inline" ng-show="user" >
             <div class="H6 col-sm-5 col-sm-offset-3 text-right">
@@ -50,6 +58,7 @@
 </div>
 
 <div class="container slider">
+    <div class="col-md-6 col-md-offset-1">
     <img ng-repeat="slide in slides" class="slide slide-animation" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
     <a class="arrow prev" href="#/home" ng-click="nextSlide()"></a>
     <a class="arrow next" href="#/home" ng-click="prevSlide()"></a>
@@ -62,4 +71,5 @@
             </ul>
         </div>
     </nav>
+        </div>
 </div>

@@ -1,13 +1,28 @@
 /* app css stylesheet */
-.whole-page {
-    padding: 0.5cm 0 0 3cm;
-    background-color: black;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
+
 footer{
-    color: white;
-    font-size: 150%;
-    padding: 0 8cm 0 8cm;
+    width: 100%;
+    text-align: center;
+    font-size: 120%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: #8a6d3b;
+
 }
+
+footer p{
+    color: #f5f5f5;
+}
+
 a:link {
     color: #ffffff;
 }
@@ -27,36 +42,157 @@ a:active {
     color: #ffffff;
 }
 
-.menu {
-    color: white;
-    font-size: 150%;
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
+.container-custom{
+    display: table;
+    width: 80%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: snow;
 }
 
-.menu > li {
-    margin-right: 1cm;
-    display: inline;
+.nav-home a {
+    color: #333333;
 }
 
-.menu1 {
-    color: white;
-    font-size: 150%;
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
+.navbar-ln-custom {
+
+    width: 100%;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 0px;
+    height: 12px;
+    margin-top: 10px;
+    border-bottom: 1px solid #000000;
+    background-color: #FFFFFF;
+    opacity: 0.5;
+}
+.navbar-ln-custom  a {
+    color: #333333;
+
+}
+
+.navbar-ln-custom .navbar-header-custom a {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+    color: #333333;
+    font-family: "Droid Serif";
+
+}
+.navbar-ln-custom .navbar-header-custom a:hover  {
+    text-decoration: none !important;
+}
+.navbar-ln-custom .navbar-header-custom a:active  {
+    text-decoration: none !important;
+}
+.navbar-ln-custom .navbar-header-custom a:link {
+    text-decoration: none !important;
+}
+.navbar-ln-custom .navbar-header-custom a:visited {
+    text-decoration: none !important;
+}
+
+.navbar-menu-custom {
+    width: 100%;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: #ffffff;
+    opacity: 0.6;
+
 }
 
 
-.home{
-    font-size: 210%; !important;
+.navbar-menu-custom  a {
+    color: #333333;
+    opacity: 1.0;
 }
+.navbar-menu-custom  .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.navbar-menu-custom  .nav li a:hover {
+    outline: 0;
+    color: #333333;
+    background-color: #f0ad4e;
+    opacity: 1.0;
+}
+.navbar-menu-custom  .nav li a:focus,
+.navbar-menu-custom  .nav li a:active {
+    outline: 0;
+    background-color: #f0ad4e;
+    color: #333333;
+    opacity: 1.0;
+}
+.navbar-menu-custom  .nav li.active {
+    outline: 0;
+    opacity: 1.0;
+}
+.navbar-menu-custom  .nav li.active a {
+    background-color: #f0ad4e;
+    opacity: 1.0;
+}
+.navbar-menu-custom  .nav li.active a:hover {
+    color: #333333;
+    opacity: 1.0;
+}
+
+
+.table-hover a{
+    color: #222222;
+    margin: 2%
+font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+
+.textcol{
+    color: #3c3c3c;
+}
+
+p {
+    color: #000000;
+}
+
+.extra1{
+    height: 20px;
+    background-color: #222222;
+    opacity: 0.6;
+
+}
+
+
 
 
 .error { float: none; color: red; padding-left: 11.5em; vertical-align: top; }
+
+
+
+.panel{
+    width: 100%;
+}
+
+.panel > .panel-heading {
+    display: table-cell;
+    border: 2px;
+    vertical-align: middle;
+    font-family: "Source Sans Pro";
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.row{
+}
+
+.row .row-custom{
+    padding: 20px;
+    margin-left: 60px;
+}
 
 .thumbnail {
     max-width: 200px; max-height: 150px; line-height: 20px; margin-bottom: 5px;
@@ -69,6 +205,7 @@ a:active {
     position: relative;
     background: #000000;
     margin-top: 20px;
+    align-items: center;
 }
 
 .slide {
@@ -114,3 +251,5 @@ a:active {
     opacity: 1;
     background-image: url(pic/n2.png);
 }
+
+
