@@ -7,12 +7,29 @@
 <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading" translate>menubar.contact</div>
-    <div class="panel-body" ng-show={{swapLang}}>
+    <div class="panel-body" ng-show="currentLocale=='en'">
         <div class="col-lg-4" >
         </div>
         <div class="col-lg-6" >
-        <p>Contact's Info</p>
+        <p><h4>Contact's Info</h4></p>
+            27/8-9, Sam Lan Road, Amphoe Mueang, Chiangmai, 50200
+            <p>Telephone : 087-728-5446</p>
+            <p>Operating day:Daily</p>
+            <p>Operating tine: 08.00-17.00</p>
+            <!-- /input-group -->
+        </div>
+        <!-- /.col-lg-6 -->
+    </div>
 
+    <div class="panel-body" ng-show="currentLocale=='th'">
+        <div class="col-lg-4" >
+        </div>
+        <div class="col-lg-6" >
+            <p><h4>ติดต่อ</h4></p>
+            ถนนสามล้าน ตำบลพระสิงห์ อำเภอเมือง จังหวัดเชียงใหม่ 50200
+            <p>เบอร์โทรศัพท์ : 087-728-5446</p>
+            <p>วันทำการ: ทุกวัน</p>
+            <p>เวลาทำการ: 08.00-17.00</p>
             <!-- /input-group -->
         </div>
         <!-- /.col-lg-6 -->

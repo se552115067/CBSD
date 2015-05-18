@@ -1,60 +1,49 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
+
+
+<div class="container">
     <div class="col-md-10 col-md-offset-2">
-        <div  class="form-inline ">
-
-    <div ng-controller="loginController" >
-
         <div class="form-group">
-        <div ng-controller="languageController">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
-                        <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
-
-                    </ul>
-                </div>
+            <div ng-controller="languageController">
+                <ul class="nav navbar-nav nav-home navbar-right">
+                    <li ><a href="" ng-click="changeLanguage('en')" translate>langBar.eng</a></li>
+                    <li><a href="" ng-click="changeLanguage('th')" translate>langBar.thai</a></li>
+                </ul>
             </div>
         </div>
+        <div ng-controller="loginController" >
+            <div  class="form-inline " ng-hide="user">
+
+
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span for="username" class="active input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <input id="username" ng-model="username" class="form-control" type="text" placeholder='username'>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span for="password" class="active input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input id="password" ng-model="password" class="form-control" type="password" placeholder='password'>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-info" ng--click="login()" translate>button.login</button>
+                <a href="#/register" class="btn btn-success" role="button" translate>button.register</a>
+
+            </div>
+
+            <div class="container ng-hide" ng-show="initialized">
+                <div class="error" ng-show="error" translate>text.wrongUsername</div>
+            </div>
+
+
         </div>
-
-            <div class="form-group ">
-                <div class="input-group">
-                <span for="username" class="active input-group-addon" translate>text.username<i class="fa fa-user fa-fw"></i></span>
-                    <input id="username" ng-model="username" type="text" class="form-control" placeholder='username' />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                <span for="password" class="active input-group-addon" translate>text.password<i class="fa fa-key fa-fw"></i></span>
-                    <input id="password" ng-model="password" type="password" class="form-control" />
-                </div>
-            </div>
-
-                    <button translate type="submit" class="btn btn-info" ng-click="login()">button.login</button>
-        <a href="#/register" class="btn btn-success" role="button" translate>button.register</a>
-
     </div>
-        </div>
-           </div>
-    </div>
-
-        </form>
-        <form class="form-inline" ng-show="user" >
-            <div class="H6 col-sm-5 col-sm-offset-3 text-right">
-                <label translate>text.hello</label> {{user.name}}
-            </div>
-            <div class="form-group">
-                <div class="col-sm-3 ">
-                    <button translate type="submit"  class="btn btn-primary" ng-click="logout()">button.logout</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="container ng-hide" ng-show="initialized">
-    <div class="error" ng-show="error" translate>text.wrongUsername</div>
 </div>
 
 <div class="container slider">

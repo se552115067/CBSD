@@ -1,29 +1,25 @@
 <div class="alert alert-success alert-dismissible" role="alert" ng-show="editSuccess">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span></button>
-    <label translate>text.SuccessEditHistory</label>
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <label translate>text.SuccessEditHistory</label>
 </div>
 
 <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading" translate>menubar.history</div>
-    <div class="panel-body">
-        <div class="col-lg-4" >
-        </div>
-        <div class="col-lg-6">
-            <table class="table table-hover">
-                <tr ng-repeat="history in historys">
-                    <td ng-if="history.lang == currentLocale"><img ng-src="data:{{history.images[0].contentType}};base64,{{history.images[0].content}}" class="thumbnail"></td>
-                    <td ng-if="history.lang == currentLocale">{{history.description}}</td>
-                    <td><a ng-href="#/history/{{history.id}}"><button class="btn btn-default" ng-show="hasRole('admin')" translate>button.edit</button></a></td>
-                </tr>
-            </table>
 
-            <!-- /input-group -->
-        </div>
-        <!-- /.col-lg-6 -->
-    </div>
 
     <!-- Table -->
+    <br>
 
+    <div class="row" ng-repeat="history in historys">
+
+        <div ng-if="history.lang == currentLocale" class="col-md-8 col-md-offset-2">
+            <div ><img ng-src="data:{{history.images[0].contentType}};base64,{{history.images[0].content}}" class="thumbnail"></div>
+            <div >{{history.description}}</div>
+        </div>
+    </div>
+    <a ng-href="#/history/1">  <button class="btn btn-default" ng-show="hasRole('admin') && currentLocale=='en'" translate>button.edit</button></a>
+    <a href="#/history/2"><button class="btn btn-default" ng-show="hasRole('admin') && currentLocale=='th'" translate>button.edit</button></a>
 </div>

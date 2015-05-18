@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="app.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Orienta' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif" />
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -24,6 +29,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
     <script src="app.js"></script>
+
 
 
 
@@ -50,9 +56,9 @@
 </head>
 <body style="background-image: url('pic/ll.jpg');">
 
-<div class="extra1">
-            <div ng-include src="'template/topnav.html'"></div>
+    <div class="extra1"></div>
 
+    <div ng-include src="'template/topnav.html'"></div>
 
     <div class="container-fluid container-custom">
         <div class="row">
@@ -69,6 +75,5 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
     -->
     <div class="container-fluid"><footer>Copyright @ 2015 Aslan,CAMT,CMU</footer></div>
-</div>
 </body>
 </html>

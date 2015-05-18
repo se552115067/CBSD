@@ -60,6 +60,7 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
     function ($scope,deleteImgService, $http, $routeParams, $location, $rootScope,activityService,$route) {
         $scope.addAc = false;
         $scope.editAc = true;
+        $scope.activity={}
         var id = $routeParams.id;
         $http.get("/activity/" + id).success(function (data) {
             $scope.activity = data;

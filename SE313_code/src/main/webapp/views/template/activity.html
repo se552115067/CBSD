@@ -5,13 +5,16 @@
 
 
     <!-- Table -->
-   <div >
-       <li>{{activity.name}}</li>
-       <li>{{activity.description}}</li>
-       <li>{{activity.date | date: 'medium'}}</li>
 
-       <!--<div ng-repeat="image in activity.images" class="textcenter">-->
-           <!--<img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail">-->
-       <!--</div>-->
-   </div>
+
+    <div class="row ">
+
+        <div class="col-md-8 col-md-offset-4">
+            <p class="custom-a">{{activity.name}}</p>
+            <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
+            <p>{{activity.description}}</p>
+            <p>{{activity.date | date: 'medium'}}</p>
+            <a ng-href="#/edit/{{activity.id}}"> <button class="btn btn-default" ng-show="hasRole('admin')" translate>button.edit</button></a>
+        </div>
+    </div>
 </div>

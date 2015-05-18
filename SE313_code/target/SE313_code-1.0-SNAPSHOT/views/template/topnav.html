@@ -1,10 +1,61 @@
-<ul class="menu">
-        <li class="home"><a href="#/home" translate="">menubar.home</a></li>
-        <li><a href="#/activity" class="navbar-link" translate>menubar.activities</a></li>
-        <li><a href="#/gallery" class="navbar-link" translate>menubar.gallery</a></li>
-        <li><a href="#/history" class="navbar-link" translate>menubar.history</a></li>
-        <li><a href="#/question" class="navbar-link" translate>menubar.qa</a></li>
-        <li><a href="#/contact" class="navbar-link" translate>menubar.contact</a></li>
-        <li><a href="#/map" class="navbar-link" translate>menubar.map</a></li>
-        <li><a href="https://www.facebook.com/WadPhraSinghWrmhawihar?fref=ts" target="_blank"><img src="pic/f.jpg"></a></li>
-</ul>
+
+<nav class="navbar">
+
+        <div class="container-fluid">
+
+
+                <div class="col-md-10 col-md-offset-1">
+                        <div class="collapse navbar-collapse navbar-ln-custom ">
+
+                                <ul class="navbar-header-custom navbar-left">
+                                        <a href="#/homepage" translate="">menubar.home</a>
+                                </ul>
+
+                        </div>
+                </div>
+
+
+                <div class="col-md-10 col-md-offset-1">
+
+                                <!-- Collect the nav links, forms, and other content -->
+
+                        <div class="collapse navbar-collapse navbar-menu-custom">
+
+                                <ul class="nav navbar-nav navbar-left">
+                                        <li>
+                                                <a href="#/activity" translate>menubar.activities</a>
+                                        </li>
+                                        <li>
+                                                <a href="#/gallery" translate>menubar.gallery</a>
+                                        </li>
+                                        <li>
+                                                <a href="#history" translate>menubar.history</a>
+                                        </li>
+                                        <li>
+                                                <a href="#question" translate>menubar.qa</a>
+                                        </li>
+                                        <li>
+                                                <a href="#contact" translate>menubar.contact</a>
+                                        </li>
+                                        <li>
+                                                <a href="#map" translate>menubar.map</a>
+                                        </li>
+                                        <li>
+                                                <a href="https://www.facebook.com/WadPhraSinghWrmhawihar?fref=ts">
+                                                        <i class="fa fa-facebook-official"></i></a>
+                                        </li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right nav-log-custom">
+                                        <div ng-controller="loginController" style="margin-top: 10px ; margin-right: 10px" >
+                                                <form class="form-inline" ng-show="user" >
+                                                        <label translate>text.hello</label> {{user.name}}
+                                                        <button translate type="submit"  class="btn btn-primary" ng--click="logout()">button.logout</button>
+                                                </form>
+                                        </div>
+                                </ul>
+
+                        </div>
+                </div>
+        </div>
+</nav>

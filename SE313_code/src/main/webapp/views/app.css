@@ -64,6 +64,7 @@ a:active {
     border-bottom: 1px solid #000000;
     background-color: #FFFFFF;
     opacity: 0.5;
+
 }
 .navbar-ln-custom  a {
     color: #333333;
@@ -101,7 +102,7 @@ a:active {
     margin-left: 0px;
     margin-top: 0px;
     background-color: #ffffff;
-    opacity: 0.6;
+    opacity: 0.7;
 
 }
 
@@ -161,7 +162,7 @@ p {
 .extra1{
     height: 20px;
     background-color: #222222;
-    opacity: 0.6;
+    opacity: 1.0;
 
 }
 
@@ -187,6 +188,12 @@ p {
 }
 
 .row{
+}
+
+.row .custom-a{
+    color: #222222;
+    padding: 20px;
+    margin-left: 50px
 }
 
 .row .row-custom{
@@ -228,18 +235,23 @@ p {
 }
 
 .arrow.prev {
-    opacity: 0.2;
+    /*opacity: 0.2;*/
     left: 20px;
     background-image: url(pic/p1.png);
     transition: 0.2s linear all;
+    margin-top: 3cm;
+    margin-left: -3cm;
+
 }
 
 .arrow.next {
-    opacity: 0.2;
+    /*opacity: 0.2;*/
     right: 20px;
     background-image: url(pic/n1.png);
     transition: 0.2s linear all;
-    padding: 0 0 0 10cm;
+    margin-top: 3cm;
+    margin-right: -10cm;
+
 }
 
 .arrow.prev:hover {

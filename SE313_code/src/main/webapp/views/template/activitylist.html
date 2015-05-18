@@ -2,36 +2,39 @@
 <div class="alert alert-success alert-dismissible" role="alert" ng-show="addSuccess">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
-        <label translate>text.successAddAct</label>
+    <strong>Success!</strong> Success adding a new Activity
 </div>
 <div class="alert alert-success alert-dismissible" role="alert" ng-show="editSuccess">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
-        <label translate>text.successEditAct</label>
+    <strong>Success!</strong> Success edit the product
 </div>
-        <div class="alert alert-success alert-dismissible" role="alert" ng-show="deleteSuccess">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<div class="alert alert-success alert-dismissible" role="alert" ng-show="deleteSuccess">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
-        <label translate>text.successDeleteAct</label>
+    <strong>Success!</strong> Success delete the Activity
 </div>
+
 
 <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading" translate>menubar.activities</div>
-
+    <div class="panel-heading">Activity</div>
 
     <!-- Table -->
     <br>
 
-        <div class="row " ng-repeat="activity in activities">
-            <div class="col-md-4 col-md-offset-1">
-            <div ng-if="activity.lang == currentLocale"><a href="#/activity/{{activity.id}}">{{activity.name}}</a>
-                <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
-            {{activity.date | date:'medium'}}
+    <div class="row " ng-if="activity.lang == currentLocale" ng-repeat="activity in activities">
 
-                <div class="col-md-6" > {{activity.description}}</div>
-            </div>
-            </div>
+        <div class="col-md-4 col-md-offset-1">
+            <a class="custom-a" href="#/activity/{{activity.id}}">{{activity.name}}</a>
+            <img ng-src="data:{{activity.images[0].contentType}};base64,{{activity.images[0].content}}" class="thumbnail">
+        </div>
+        <div class="col-md-6" > <br> {{activity.description}}
+        <br>
+            {{activity.date}}
+        </div>
+
 
     </div>
+
 </div>
