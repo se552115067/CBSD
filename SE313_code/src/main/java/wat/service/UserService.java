@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UserService {
     public List<User> findAll();
-    
+    public User getbyid(Long id);
     public User findByUserName(String username);
 
     User addUser(User user);

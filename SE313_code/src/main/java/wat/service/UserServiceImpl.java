@@ -20,10 +20,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
 
+    public UserServiceImpl(UserDao u) {
+        this.userDao=u;
+    }
+
     @Override
     public List<User> findAll() {
                      return userRepository.findAll();
                  }
+
+    @Override
+    public User getbyid(Long id) {
+        return userRepository.findOne(id);
+    }
 
     @Override
     public User findByUserName(String username) {

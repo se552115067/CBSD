@@ -27,7 +27,7 @@
                 <img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail">
                 <td class="text-center"><a ng-href="#/history/{{history.id}}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="deleteImg(image.id)"></span></a></td>
             </div>
-            <button type="submit" class="btn btn-default" ng-click="editHistory($flow)" translate>button.edit</button>
+            <button type="submit" class="btn btn-default" ng-click="editHistory($flow)" ng-disabled="editform.description.$invalid" translate>button.edit</button>
         </form>
     </div>
 </div>

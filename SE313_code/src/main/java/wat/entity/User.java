@@ -36,7 +36,16 @@ public class User {
 
         public User() {
         }
-
+public User(Long id,String username ,String password,String name,String email){
+    if(id.equals("") ||username.equals("")||password.equals("")||name.equals("")||email.equals("")){
+         throw new NullPointerException();
+    }
+    this.username = username;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.id=id;
+}
     public User(String username, String name, String email, String password) {
         this.username = username;
         this.name = name;
@@ -46,6 +55,7 @@ public class User {
     }
 
     public User(String username, String name, String email, String password, Set<Role> roles) {
+
         this.username = username;
         this.name = name;
         this.email = email;

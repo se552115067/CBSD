@@ -21,6 +21,11 @@ public class HistoryDAOImpl implements HistoryDAO {
     }
 
     @Override
+    public History addHistory(History history) {
+        return historyRepository.save(history);
+    }
+
+    @Override
     public History getHistory(Long id) {
         return historyRepository.findOne(id);
     }

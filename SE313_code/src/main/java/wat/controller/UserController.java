@@ -15,6 +15,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    public UserController(UserService userService) {
+        this.userService=userService;
+    }
+
     @RequestMapping(value = "user",method = RequestMethod.POST)
     public @ResponseBody
     User add(@RequestBody User user, BindingResult bindingResult){

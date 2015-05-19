@@ -10,7 +10,7 @@ import java.util.List;
 public interface HistoryDAO {
     List<History> getHistorys();
 
-
+History addHistory(History history);
     History getHistory(Long id);
     History updateHistory(History history);
 }

@@ -23,6 +23,11 @@ HistoryDAO historyDAO;
         return historyDAO.getHistorys();
     }
 
+    @Override
+    public History add(History history) {
+        return historyDAO.addHistory(history);
+    }
+
 
     @Override
     public History getHistory(Long id) {

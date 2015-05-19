@@ -31,7 +31,8 @@ String name;
         New = true;
 
     }
-    public QuestionAnswer(String name, boolean aNew, String answer) {
+    public QuestionAnswer(Long id,String name, boolean aNew, String answer) {
+        this.id=id;
         this.name = name;
         New = aNew;
         this.answer = answer;
@@ -61,7 +62,7 @@ String name;
         return result;
     }
 
-    public QuestionAnswer() {
+    public QuestionAnswer(long l, String s, String earth) {
         this.New= true;
     }
 

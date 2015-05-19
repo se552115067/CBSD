@@ -77,7 +77,7 @@ questionMainController.controller('editQuestionController', ['$scope', '$http', 
         $scope.add = false;
         $scope.edit = true;
         var id = $routeParams.id;
-        $http.get("/question/" + id).success(function (data) {
+        $http.get("/wat/question/" + id).success(function (data) {
             $scope.question = data;
         });
 

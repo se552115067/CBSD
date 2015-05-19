@@ -14,4 +14,6 @@ public interface ActivityDAO {
     Activity addActivity(Activity activity);
     Activity deleteActivity(Activity activity);
     Activity updateActivity(Activity activity);
+    List<Activity> getbyLang(String lang);
+
 }

@@ -34,6 +34,8 @@
 
 
 
+
+
     <!-- add i18n script -->
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>

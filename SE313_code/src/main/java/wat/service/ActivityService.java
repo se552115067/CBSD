@@ -14,7 +14,7 @@ public interface ActivityService {
     Activity addActivity(Activity activity);
     Activity deleteActivity(Long id);
     Activity updateActivity(Activity activity);
-
+List<Activity> getbylang(String lang);
 
     Activity addImage(Activity activity, Image image);
 }

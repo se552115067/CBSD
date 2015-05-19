@@ -7,6 +7,8 @@ import wat.entity.User;
 import wat.repository.RoleRepository;
 import wat.repository.UserRepository;
 
+import java.util.List;
+
 /**
  * Created by P-OniSawa on 14/5/2558.
  */
@@ -21,5 +23,10 @@ public class DbUserDao implements UserDao {
     public User addUser(User user) {
         user.getRoles().add(roleRepository.findOne(2L));
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return userRepository.findAll();
     }
 }

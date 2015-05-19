@@ -21,6 +21,7 @@ public class ActivityDAOImpl implements ActivityDAO {
 
 
 
+
     @Override
     public Activity getActivity(Long id) {
         return activityRepository.findOne(id);
@@ -44,6 +45,10 @@ public class ActivityDAOImpl implements ActivityDAO {
         return activityRepository.save(activity);
     }
 
+    @Override
+    public List<Activity> getbyLang(String lang) {
+        return   activityRepository.findByLang(lang);
+    }
 
 
 }

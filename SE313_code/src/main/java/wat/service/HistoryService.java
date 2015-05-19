@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface HistoryService {
     List<History> getHistorys();
-
+History add(History history);
     History getHistory(Long id);
 
     History updateHistory(History history);
