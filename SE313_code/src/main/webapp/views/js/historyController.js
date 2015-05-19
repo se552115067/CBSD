@@ -18,7 +18,7 @@ historyController.controller('editHistoryController', ['$scope','deleteImgHistor
     function ($scope,deleteImgHistoryService, $http, $routeParams, $location, $rootScope,historyService,$route) {
         $scope.edit = true;
         var id = $routeParams.id;
-        $http.get("/wat/history/" + id).success(function (data) {
+        $http.get("history/" + id).success(function (data) {
             $scope.history = data;
         });
         $scope.deleteImg = function (imgid) {
@@ -34,9 +34,9 @@ historyController.controller('editHistoryController', ['$scope','deleteImgHistor
             //$http.put("/product", $scope.product).then(function () {
             historyService.update({id:$scope.history.id},$scope.history,function(data){
                 $rootScope.editSuccess = true;
-                flowFiles.opts.target = '/wat/historyImage/add';
+                flowFiles.opts.target = '/historyImage/add';
                 flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={historyId:$scope.history.id};
+                flowFiles.opts.query ={historyid:$scope.history.id};
                 flowFiles.upload();
                 $rootScope.editSuccess = true;
                 $location.path("history");

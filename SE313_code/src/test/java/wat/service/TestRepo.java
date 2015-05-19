@@ -52,7 +52,7 @@ public class TestRepo {
         u.addUser(new User(1l,"user","123456","User","panjasin@gmail.com"));
         when(u.findByUserName("User")).thenReturn(new User(1l, "user", "123456", "User", "panjasin@gmail.com"));
         when(u.findByUserName("")).thenReturn(null);
-        when(u.findByUserName("pan")).thenReturn(null);
+        when(u.findByUserName("pan")).thenReturn(new User(1l, "user", "123456", "User", "panjasin@gmail.com"));
     }
     @Test
     public void test3(){

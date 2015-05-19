@@ -61,7 +61,7 @@ activityMainController.controller('editActivityController', ['$scope', '$http', 
         $scope.add = false;
         $scope.edit = true;
         var id = $routeParams.id;
-        $http.get("/activity/" + id).success(function (data) {
+        $http.get("activity/" + id).success(function (data) {
             $scope.activity = data;
         });
 
@@ -69,7 +69,7 @@ activityMainController.controller('editActivityController', ['$scope', '$http', 
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
                 var Activityid = data.id;
-                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.target = 'activityImage/add';
                 flowFiles.opts.testChunks = false;
                 flowFiles.opts.query ={Activityid:Activityid};
                 flowFiles.upload();

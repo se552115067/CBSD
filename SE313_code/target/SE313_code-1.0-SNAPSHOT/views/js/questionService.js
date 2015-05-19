@@ -8,6 +8,3 @@ QuestionService.factory('questionService',function($resource){
         }});
 
 })
-
-
-

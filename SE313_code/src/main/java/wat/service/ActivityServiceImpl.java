@@ -7,7 +7,7 @@ import wat.entity.Activity;
 import wat.entity.Image;
 import wat.entity.User;
 import wat.repository.UserRepository;
-import wat.service.util.emailutil;
+
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -94,6 +94,10 @@ ActivityDAO activityDAO;
         return activityDAO.updateActivity(activity);
     }
 
+    @Override
+    public List<Activity> getbylang(String lang) {
+        return activityDAO.getbyLang(lang);
+    }
 
 
     @Override

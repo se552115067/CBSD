@@ -167,7 +167,7 @@ watApp.config(['$locationProvider', '$httpProvider', function($locationProvider,
 });
 
 watApp.config(function($translateProvider){
-    $translateProvider.useUrlLoader('/wat/messageBundle');
+    $translateProvider.useUrlLoader('/messageBundle');
     $translateProvider.useStorage('UrlLanguageStorage');
     $translateProvider.preferredLanguage('en');
     $translateProvider.fallbackLanguage('en');

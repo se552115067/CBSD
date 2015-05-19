@@ -11,9 +11,9 @@ activityMainController.controller('addActivityController', ['$scope', '$http', '
                 // get the product id which the image will be addded
                 var activityid = data.id;
                 // set location
-                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.target = 'activityImage/add';
                 flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={activityId:activityid};
+                flowFiles.opts.query ={activityid:activityid};
                 flowFiles.upload();
 
                 $rootScope.addSuccess = true;
@@ -80,7 +80,7 @@ activityMainController.controller('editActivityController', ['$scope','deleteImg
                $scope.activity.images = null;
             //$http.put("/product", $scope.product).then(function () {
             activityService.update({id:$scope.activity.id},$scope.activity,function(data){
-                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.target = 'activityImage/add';
                 flowFiles.opts.testChunks = false;
                 flowFiles.opts.query ={activityid:$scope.activity.id};
                 flowFiles.upload();

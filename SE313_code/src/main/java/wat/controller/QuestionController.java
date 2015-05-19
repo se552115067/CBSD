@@ -19,33 +19,32 @@ import java.util.List;
 public class QuestionController {
     @Autowired
     QuestionService questionService;
-    @RequestMapping(value = "question",method = RequestMethod.GET)
+    @RequestMapping(value = "/question",method = RequestMethod.GET)
     public List<QuestionAnswer> list(){
         return questionService.getQuestionAnswers();
     }
 
 
 
-    @RequestMapping(value = "question",method = RequestMethod.POST)
+    @RequestMapping(value = "/question",method = RequestMethod.POST)
     public @ResponseBody
     QuestionAnswer add(@RequestBody QuestionAnswer question, BindingResult bindingResult){
         return questionService.addQuestionAnswer(question);
     }
 
-    @RequestMapping(value = "question/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/question/{id}",method = RequestMethod.GET)
     public  QuestionAnswer getQuestionAnswer(@PathVariable("id") Long id){
         return questionService.getQuestionAnswer(id);
     }
 
-    @RequestMapping(value = "question/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/question/{id}",method = RequestMethod.PUT)
     public  QuestionAnswer edit(@PathVariable("id") Long id,@RequestBody QuestionAnswer question, BindingResult bindingResult){
         question.setNew(false);
         return questionService.updateQuestionAnswer(question);
     }
 
-    @RequestMapping(value = "question/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/question/{id}",method = RequestMethod.DELETE)
     public  QuestionAnswer edit(@PathVariable("id") Long id){
         return questionService.deleteQuestionAnswer(id);
     }
-
 }

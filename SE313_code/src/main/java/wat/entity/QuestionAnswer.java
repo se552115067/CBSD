@@ -20,6 +20,9 @@ String name;
     boolean New;
     String answer;
 
+    public QuestionAnswer() {
+    }
+
     public QuestionAnswer(Long id,String name) {
         this.id=id;
         this.name = name;

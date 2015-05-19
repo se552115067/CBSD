@@ -18,7 +18,7 @@ historyController.controller('editHistoryController', ['$scope','deleteImgHistor
     function ($scope,deleteImgHistoryService, $http, $routeParams, $location, $rootScope,historyService,$route) {
         $scope.edit = true;
         var id = $routeParams.id;
-        $http.get("/history/" + id).success(function (data) {
+        $http.get("history/" + id).success(function (data) {
             $scope.history = data;
         });
         $scope.deleteImg = function (imgid) {

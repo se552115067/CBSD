@@ -210,6 +210,13 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <PATH>
@@ -1056,8 +1063,12 @@
       <method />
     </configuration>
     <configuration default="false" name="SE313_code" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.18" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+<<<<<<< HEAD
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="update-resources" />
+=======
+      <option name="UPDATING_POLICY" value="restart-server" />
+>>>>>>> 07f12f4f60a72cd0bad00430f8193b9d47e11695
       <deployment>
         <artifact name="SE313_code:war exploded">
           <settings>
@@ -1723,8 +1734,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wat/service/HistoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+=======
+        <state vertical-scroll-proportion="0.3611691" vertical-offset="728" max-vertical-offset="1207">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+>>>>>>> 07f12f4f60a72cd0bad00430f8193b9d47e11695
         </state>
       </provider>
     </entry>
@@ -1919,7 +1935,18 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1927,7 +1954,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>mail-1.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

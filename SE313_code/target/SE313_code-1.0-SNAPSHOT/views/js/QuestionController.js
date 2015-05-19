@@ -57,7 +57,7 @@ questionMainController.controller('listQuestionController', ['$scope', '$http', 
             questionService.save($scope.question, function (data) {
                 // after adding the object, add a new picture
                 // get the product id which the image will be addded
-                var Activityid = data.id;
+
                 // set location
 
                 $rootScope.add = true;

@@ -29,7 +29,7 @@ securityController.controller('loginController',['$scope','$rootScope','$locatio
 
 
     var securityService  = angular.module('securityServices',['ngResource']); +securityService.factory('UserService',function($resource){
-    return $resource('/wat/user/:action',{},
+    return $resource('user/:action',{},
         {
             authenticate:{
         method: 'POST',
